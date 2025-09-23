@@ -1,4 +1,4 @@
-﻿using NetCorePal.D3Shop.Domain.AggregatesModel.Identity.RoleAggregate;
+using NetCorePal.D3Shop.Domain.AggregatesModel.Identity.RoleAggregate;
 using NetCorePal.Extensions.Domain;
 using NetCorePal.Extensions.Primitives;
 using System;
@@ -21,11 +21,11 @@ namespace NetCorePal.D3Shop.Domain.AggregatesModel.Identity.MenuAggregate
         /// <summary>
         /// 菜单名称
         /// </summary>
-        public string Name { get; private set; } = string.Empty;
+        public string Name { get; private set; }
         /// <summary>
         /// 菜单路径
         /// </summary>
-        public string Path { get; private set; } = string.Empty;
+        public string Path { get; private set; }
 
         /// <summary>
         /// 状态
@@ -35,8 +35,8 @@ namespace NetCorePal.D3Shop.Domain.AggregatesModel.Identity.MenuAggregate
         /// <summary>
         /// 父菜单ID
         /// </summary>
-        public MenuId ParentId { get; private set; } = new MenuId(0);
-       
+        public MenuId ParentId { get; private set; }
+
 
         /// <summary>
         /// 菜单类型
@@ -45,15 +45,15 @@ namespace NetCorePal.D3Shop.Domain.AggregatesModel.Identity.MenuAggregate
         /// <summary>
         /// 权限代码
         /// </summary>
-        public string AuthCode { get; private set; } = string.Empty;
+        public string AuthCode { get; private set; }
         /// <summary>
         /// 组件路径
         /// </summary>
-        public string Component { get; private set; } = string.Empty;
+        public string Component { get; private set; }
         /// <summary>
         /// 重定向路径
         /// </summary>
-        public string Redirect { get; private set; } = string.Empty;
+        public string Redirect { get; private set; }
         /// <summary>
         /// 排序顺序
         /// </summary>
@@ -61,7 +61,7 @@ namespace NetCorePal.D3Shop.Domain.AggregatesModel.Identity.MenuAggregate
         /// <summary>
         /// 菜单图标
         /// </summary>
-        public string Icon { get; private set; } = string.Empty;
+        public string Icon { get; private set; }
         /// <summary>
         /// 是否可见
         /// </summary>

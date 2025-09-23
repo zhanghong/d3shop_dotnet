@@ -1,4 +1,4 @@
-﻿using MediatR;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using NetCorePal.D3Shop.Admin.Shared.Permission;
 using NetCorePal.D3Shop.Admin.Shared.Requests;
@@ -37,7 +37,7 @@ public class AdminUserController(
 
         var password = PasswordHasher.HashPassword(request.PassWord);
         var adminUserId = await mediator.Send(
-            new CreateAdminUserCommand(request.Name, request.Phone, password, rolesToBeAssigned,request.RealName,request.Status,request.Email),
+            new CreateAdminUserCommand(request.Name, request.Phone, password, rolesToBeAssigned, request.RealName, request.Status, request.Email),
             CancellationToken);
 
         return adminUserId.AsResponseData();

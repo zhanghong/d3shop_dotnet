@@ -1,4 +1,4 @@
-﻿namespace NetCorePal.D3Shop.Web
+namespace NetCorePal.D3Shop.Web
 {
     public class AppConfiguration
     {

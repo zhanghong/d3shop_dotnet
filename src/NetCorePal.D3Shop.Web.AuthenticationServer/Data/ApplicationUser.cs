@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity;
 
 namespace NetCorePal.D3Shop.Web.AuthenticationServer.Data;
 

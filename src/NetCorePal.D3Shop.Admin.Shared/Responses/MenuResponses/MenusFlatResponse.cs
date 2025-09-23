@@ -1,4 +1,4 @@
-﻿using NetCorePal.D3Shop.Domain.AggregatesModel.Identity.MenuAggregate;
+using NetCorePal.D3Shop.Domain.AggregatesModel.Identity.MenuAggregate;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace NetCorePal.D3Shop.Admin.Shared.Responses.MenuResponses
 {
-   public class MenusFlatResponse
+    public class MenusFlatResponse
     {
         /// <summary>
         /// 菜单ID

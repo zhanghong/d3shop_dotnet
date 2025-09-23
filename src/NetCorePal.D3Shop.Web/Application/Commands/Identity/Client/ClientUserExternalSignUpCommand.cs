@@ -1,4 +1,4 @@
-﻿using FluentValidation;
+using FluentValidation;
 using NetCorePal.D3Shop.Domain.AggregatesModel.Identity.ClientUserAggregate;
 using NetCorePal.D3Shop.Infrastructure.Repositories.Identity.Client;
 using NetCorePal.D3Shop.Web.Application.Queries.Identity.Client;

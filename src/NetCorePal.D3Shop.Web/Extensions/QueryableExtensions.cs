@@ -1,4 +1,4 @@
-﻿using System.Linq.Expressions;
+using System.Linq.Expressions;
 
 namespace NetCorePal.D3Shop.Web.Extensions;
 
@@ -7,7 +7,7 @@ namespace NetCorePal.D3Shop.Web.Extensions;
 /// </summary>
 public static class QueryableExtensions
 {
-    
+
     /*/// <summary>
     /// 根据指定的条件，在 <see cref="IQueryable{T}"/> 上应用筛选操作。
     /// </summary>

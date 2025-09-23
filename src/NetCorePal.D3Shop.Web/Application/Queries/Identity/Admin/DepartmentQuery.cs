@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using NetCorePal.D3Shop.Admin.Shared.Requests;
 using NetCorePal.D3Shop.Admin.Shared.Responses;
 using NetCorePal.D3Shop.Domain.AggregatesModel.Identity.DepartmentAggregate;
@@ -32,7 +32,7 @@ public class DepartmentQuery(ApplicationDbContext applicationDbContext) : IQuery
         // 查询并构建初始列表
         var departments = await DepartmentSet.AsNoTracking()
             .Where(dt => string.IsNullOrWhiteSpace(queryRequest.Name) || dt.Name.Contains(queryRequest.Name!))
-            .Where(dt => dt.IsDeleted == false)
+            .Where(dt => !dt.IsDeleted)
             .OrderBy(dt => dt.Id)
             .Select(d => new DepartmentResponse(
                 d.Id,

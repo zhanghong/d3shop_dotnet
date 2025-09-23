@@ -1,4 +1,4 @@
-﻿using FluentValidation;
+using FluentValidation;
 using NetCorePal.D3Shop.Admin.Shared.Dtos.Identity;
 using NetCorePal.D3Shop.Domain.AggregatesModel.Identity.DepartmentAggregate;
 using NetCorePal.D3Shop.Infrastructure.Repositories.Identity.Admin;
@@ -30,7 +30,7 @@ public class CreateDepartmentCommandHandler(IDepartmentRepository departmentRepo
 {
     public async Task<DeptId> Handle(CreateDepartmentCommand request, CancellationToken cancellationToken)
     {
-     
+
         var department = new Department(request.Name, request.Description, request.ParentId, request.Status);
         await departmentRepository.AddAsync(department, cancellationToken);
         return department.Id;

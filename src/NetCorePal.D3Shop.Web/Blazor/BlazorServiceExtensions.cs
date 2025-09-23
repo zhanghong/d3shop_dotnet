@@ -1,4 +1,4 @@
-﻿using NetCorePal.D3Shop.Web.Admin.Client.Services;
+using NetCorePal.D3Shop.Web.Admin.Client.Services;
 using NetCorePal.D3Shop.Web.Controllers.Identity.Admin;
 
 namespace NetCorePal.D3Shop.Web.Blazor;
@@ -10,6 +10,6 @@ public static class BlazorServiceExtensions
         services.AddScoped<IRolesService, RoleController>();
         services.AddScoped<IAdminUserService, AdminUserController>();
         services.AddScoped<IDepartmentService, DepartmentController>();
-        
+
     }
 }

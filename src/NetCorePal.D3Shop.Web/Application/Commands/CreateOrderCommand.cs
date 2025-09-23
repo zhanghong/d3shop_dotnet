@@ -1,4 +1,4 @@
-﻿using NetCorePal.D3Shop.Domain.AggregatesModel.OrderAggregate;
+using NetCorePal.D3Shop.Domain.AggregatesModel.OrderAggregate;
 using NetCorePal.Extensions.Primitives;
 
 namespace NetCorePal.D3Shop.Web.Application.Commands

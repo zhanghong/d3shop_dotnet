@@ -1,15 +1,15 @@
-﻿using Microsoft.AspNetCore.Mvc;
 using MediatR;
-using NetCorePal.D3Shop.Domain.AggregatesModel.Identity.MenuAggregate;
-using NetCorePal.D3Shop.Web.Application.Queries;
-using NetCorePal.Extensions.Dto;
-using NetCorePal.Extensions.Primitives;
-using NetCorePal.D3Shop.Web.Auth;
+using Microsoft.AspNetCore.Mvc;
 using NetCorePal.D3Shop.Admin.Shared.Permission;
 using NetCorePal.D3Shop.Admin.Shared.Requests.MenuRequests;
 using NetCorePal.D3Shop.Admin.Shared.Responses.MenuResponses;
-using NetCorePal.D3Shop.Web.Application.Queries.Identity.Admin;
+using NetCorePal.D3Shop.Domain.AggregatesModel.Identity.MenuAggregate;
 using NetCorePal.D3Shop.Web.Application.Commands.Identity.Admin.Menus;
+using NetCorePal.D3Shop.Web.Application.Queries;
+using NetCorePal.D3Shop.Web.Application.Queries.Identity.Admin;
+using NetCorePal.D3Shop.Web.Auth;
+using NetCorePal.Extensions.Dto;
+using NetCorePal.Extensions.Primitives;
 
 namespace NetCorePal.D3Shop.Web.Controllers.Identity.Admin
 {
@@ -199,7 +199,7 @@ namespace NetCorePal.D3Shop.Web.Controllers.Identity.Admin
         }
 
 
-       
+
 
         /// <summary>
         /// 设置菜单可见性

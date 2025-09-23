@@ -1,4 +1,4 @@
-﻿namespace NetCorePal.D3Shop.Web.Application.Hubs
+namespace NetCorePal.D3Shop.Web.Application.Hubs
 {
     public interface IChatClient
     {

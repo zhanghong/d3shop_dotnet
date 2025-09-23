@@ -1,4 +1,4 @@
-﻿using NetCorePal.D3Shop.Domain.AggregatesModel.Identity.DepartmentAggregate;
+using NetCorePal.D3Shop.Domain.AggregatesModel.Identity.DepartmentAggregate;
 using NetCorePal.D3Shop.Domain.AggregatesModel.Identity.RoleAggregate;
 using NetCorePal.D3Shop.Domain.DomainEvents.Identity.Admin;
 using NetCorePal.Extensions.Domain;

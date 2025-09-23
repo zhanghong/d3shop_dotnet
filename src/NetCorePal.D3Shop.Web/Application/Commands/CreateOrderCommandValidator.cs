@@ -1,4 +1,4 @@
-﻿using FluentValidation;
+using FluentValidation;
 
 namespace NetCorePal.D3Shop.Web.Application.Commands
 {

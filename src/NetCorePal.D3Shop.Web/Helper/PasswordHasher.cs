@@ -1,6 +1,6 @@
-﻿using System.Security.Cryptography;
-using System.Text;
 using Microsoft.AspNetCore.Cryptography.KeyDerivation;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace NetCorePal.D3Shop.Web.Helper
 {

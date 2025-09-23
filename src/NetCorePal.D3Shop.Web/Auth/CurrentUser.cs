@@ -1,6 +1,6 @@
-﻿using System.Security.Claims;
 using NetCorePal.D3Shop.Domain.AggregatesModel.Identity.AdminUserAggregate;
 using NetCorePal.D3Shop.Domain.AggregatesModel.Identity.ClientUserAggregate;
+using System.Security.Claims;
 
 namespace NetCorePal.D3Shop.Web.Auth;
 

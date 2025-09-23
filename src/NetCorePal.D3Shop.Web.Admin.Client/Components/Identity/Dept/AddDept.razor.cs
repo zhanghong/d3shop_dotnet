@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Components.Forms;
+using Microsoft.AspNetCore.Components.Forms;
 
 namespace NetCorePal.D3Shop.Web.Admin.Client.Components.Identity.Dept;
 
@@ -37,7 +37,7 @@ public partial class AddDept
     private async Task Form_OnFinish(EditContext editContext)
     {
         _modalConfirmLoading = true;
-         StateHasChanged();
+        StateHasChanged();
         //   _newRoleModel.PermissionCodes = _assignedPermissionCodes;
         var response = await DepartmentService.CreateDepartment(_newRoleModel);
         if (response.Success)

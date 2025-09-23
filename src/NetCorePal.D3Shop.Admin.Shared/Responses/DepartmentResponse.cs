@@ -1,8 +1,8 @@
-﻿using NetCorePal.D3Shop.Domain.AggregatesModel.Identity.DepartmentAggregate;
+using NetCorePal.D3Shop.Domain.AggregatesModel.Identity.DepartmentAggregate;
 
 namespace NetCorePal.D3Shop.Admin.Shared.Responses;
 
-public class DepartmentResponse(DeptId id, string name, string remark,string code,DeptId parentId,int status,DateTimeOffset createTime, List<DepartmentResponse> children)
+public class DepartmentResponse(DeptId id, string name, string remark, string code, DeptId parentId, int status, DateTimeOffset createTime, List<DepartmentResponse> children)
 {
     public DeptId Id { get; } = id;
     public string Name { get; set; } = name;

@@ -1,4 +1,4 @@
-﻿namespace NetCorePal.D3Shop.Web.Extensions
+namespace NetCorePal.D3Shop.Web.Extensions
 {
     public static class AppConfigurationExtensions
     {

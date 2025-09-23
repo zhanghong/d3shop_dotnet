@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -8,6 +5,9 @@ using Microsoft.AspNetCore.Mvc;
 using NetCorePal.D3Shop.Web.AuthenticationServer.Data;
 using OpenIddict.Abstractions;
 using OpenIddict.Server.AspNetCore;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using static OpenIddict.Abstractions.OpenIddictConstants;
 
 namespace NetCorePal.D3Shop.Web.AuthenticationServer.Controllers;

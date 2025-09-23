@@ -23,4 +23,4 @@ public class AddUserDeptCommandHandler(AdminUserRepository adminUserRepository)
 
         user.AddUserDept(request.DeptId, request.DeptName);
     }
-} 
+}

@@ -1,4 +1,4 @@
-﻿using NetCorePal.D3Shop.Domain.AggregatesModel.Identity.MenuAggregate;
+using NetCorePal.D3Shop.Domain.AggregatesModel.Identity.MenuAggregate;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -64,24 +64,24 @@ namespace NetCorePal.D3Shop.Admin.Shared.Utils
                 throw new ArgumentNullException(nameof(parentIdSelector));
             if (childrenSetter == null)
                 throw new ArgumentNullException(nameof(childrenSetter));
-            if (rootParentId == null)
+            if (object.Equals(rootParentId, default(TId)))
                 throw new ArgumentNullException(nameof(rootParentId));
 
             // 构建以父节点ID为键的查找表
             var lookup = items.ToLookup(parentIdSelector);
-            
+
             // 获取根节点
             var roots = lookup[rootParentId].ToList();
-            
+
             // 递归设置子节点
             foreach (var root in roots)
             {
                 SetChildren(root, lookup, idSelector, childrenSetter);
             }
-            
+
             return roots;
         }
-        
+
         /// <summary>
         /// 递归设置子节点
         /// </summary>
@@ -93,13 +93,13 @@ namespace NetCorePal.D3Shop.Admin.Shared.Utils
         {
             var children = lookup[idSelector(item)].ToList();
             childrenSetter(item, children);
-            
+
             foreach (var child in children)
             {
                 SetChildren(child, lookup, idSelector, childrenSetter);
             }
         }
-        
+
         /// <summary>
         /// 将集合转换为树结构（适用于ITreeNode接口）
         /// </summary>

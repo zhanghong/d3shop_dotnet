@@ -1,4 +1,4 @@
-﻿using NetCorePal.D3Shop.Admin.Shared.Utils;
+using NetCorePal.D3Shop.Admin.Shared.Utils;
 using NetCorePal.D3Shop.Domain.AggregatesModel.Identity.MenuAggregate;
 using System;
 using System.Collections;
@@ -71,7 +71,7 @@ namespace NetCorePal.D3Shop.Admin.Shared.Responses.MenuResponses
 
         public MenuId GetId() => Id;
         public MenuId GetPid() => Pid;
-        
+
         public void SetChildren(IList children) => Children = children.Cast<MenuTreeNodeResponse>().ToList();
     }
 

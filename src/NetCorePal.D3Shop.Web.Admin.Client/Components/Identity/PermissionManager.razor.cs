@@ -1,4 +1,4 @@
-﻿using NetCorePal.D3Shop.Admin.Shared.Permission;
+using NetCorePal.D3Shop.Admin.Shared.Permission;
 
 namespace NetCorePal.D3Shop.Web.Admin.Client.Components.Identity;
 

@@ -1,4 +1,4 @@
-﻿global using Microsoft.Extensions.DependencyInjection;
+global using Microsoft.Extensions.DependencyInjection;
 global using NetCorePal.D3Shop.Domain;
 global using NetCorePal.D3Shop.Infrastructure;
 global using NetCorePal.Extensions.AspNetCore;

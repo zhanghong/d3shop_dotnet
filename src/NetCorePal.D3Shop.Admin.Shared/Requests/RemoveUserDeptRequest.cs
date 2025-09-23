@@ -17,4 +17,4 @@ public class RemoveUserDeptRequest
     /// 部门ID
     /// </summary>
     public DeptId DeptId { get; set; } = default!;
-} 
+}

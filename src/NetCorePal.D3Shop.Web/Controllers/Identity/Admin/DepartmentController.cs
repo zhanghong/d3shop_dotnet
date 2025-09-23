@@ -1,4 +1,4 @@
-﻿using MediatR;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using NetCorePal.D3Shop.Admin.Shared.Permission;
 using NetCorePal.D3Shop.Admin.Shared.Requests;
@@ -107,5 +107,5 @@ public class DepartmentController(
             CancellationToken);
         return new ResponseData();
     }
-    
+
 }

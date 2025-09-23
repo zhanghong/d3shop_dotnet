@@ -1,4 +1,4 @@
-﻿using NetCorePal.Extensions.Domain;
+using NetCorePal.Extensions.Domain;
 using NetCorePal.Extensions.Primitives;
 
 namespace NetCorePal.D3Shop.Domain.AggregatesModel.Identity.ClientUserAggregate;

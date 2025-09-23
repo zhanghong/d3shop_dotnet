@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using NetCorePal.D3Shop.Domain.AggregatesModel.Identity.DepartmentAggregate;
 
@@ -12,8 +12,8 @@ internal class DepartmentConfiguration : IEntityTypeConfiguration<Department>
         builder.HasKey(r => r.Id);
         builder.Property(r => r.Id).UseSnowFlakeValueGenerator();
 
-      
+
     }
 
-   
+
 }

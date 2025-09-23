@@ -1,4 +1,4 @@
-﻿using NetCorePal.D3Shop.Domain.DomainEvents;
+using NetCorePal.D3Shop.Domain.DomainEvents;
 using NetCorePal.Extensions.Domain;
 using NetCorePal.Extensions.Primitives;
 

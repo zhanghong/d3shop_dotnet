@@ -1,4 +1,4 @@
-﻿using AntDesign.TableModels;
+using AntDesign.TableModels;
 
 namespace NetCorePal.D3Shop.Web.Admin.Client.Pages;
 

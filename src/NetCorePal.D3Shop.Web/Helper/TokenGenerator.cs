@@ -1,5 +1,5 @@
-﻿using System.Security.Cryptography;
 using Microsoft.Extensions.Options;
+using System.Security.Cryptography;
 
 namespace NetCorePal.D3Shop.Web.Helper;
 

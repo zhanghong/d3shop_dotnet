@@ -1,4 +1,3 @@
-﻿using System.Security.Claims;
 using MediatR;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
@@ -18,6 +17,7 @@ using NetCorePal.Extensions.Primitives;
 using OpenIddict.Abstractions;
 using OpenIddict.Client;
 using OpenIddict.Client.AspNetCore;
+using System.Security.Claims;
 
 namespace NetCorePal.D3Shop.Web.Controllers.Identity.Client;
 
@@ -125,9 +125,9 @@ public class ClientUserAccountController(
         return Challenge(properties, OpenIddictClientAspNetCoreDefaults.AuthenticationScheme);
     }
 
-// 注意：该控制器对所有提供者使用相同的回调操作，
-// 但对于更喜欢为每个提供者使用不同操作的用户，
-// 可以将以下操作拆分为多个操作。
+    // 注意：该控制器对所有提供者使用相同的回调操作，
+    // 但对于更喜欢为每个提供者使用不同操作的用户，
+    // 可以将以下操作拆分为多个操作。
     [HttpGet("/api/[controller]/callback/login/{provider}")]
     [HttpPost("/api/[controller]/callback/login/{provider}")]
     [IgnoreAntiforgeryToken]
@@ -213,9 +213,9 @@ public class ClientUserAccountController(
         return new ClientUserExternalSignUpResponse(jwt, refreshToken, tokenExpiryTime).AsResponseData();
     }
 
-// 注意：该控制器对所有提供者使用相同的回调操作，
-// 但对于更喜欢为每个提供者使用不同操作的用户，
-// 可以将以下操作拆分为多个操作。
+    // 注意：该控制器对所有提供者使用相同的回调操作，
+    // 但对于更喜欢为每个提供者使用不同操作的用户，
+    // 可以将以下操作拆分为多个操作。
     [HttpGet("/api/[controller]/callback/logout/{provider}")]
     [HttpPost("/api/[controller]/callback/logout/{provider}")]
     [IgnoreAntiforgeryToken]

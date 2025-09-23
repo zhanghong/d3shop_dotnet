@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using NetCorePal.D3Shop.Web.Auth;
 
 namespace NetCorePal.D3Shop.Web.Controllers;

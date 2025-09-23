@@ -1,4 +1,4 @@
-﻿using OpenIddict.Client;
+using OpenIddict.Client;
 using static OpenIddict.Abstractions.OpenIddictConstants;
 
 namespace NetCorePal.D3Shop.Web.Extensions;

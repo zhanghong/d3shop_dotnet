@@ -1,9 +1,9 @@
-﻿using NetCorePal.D3Shop.Domain.AggregatesModel.Identity.AdminUserAggregate;
+using NetCorePal.D3Shop.Domain.AggregatesModel.Identity.AdminUserAggregate;
 using NetCorePal.D3Shop.Domain.AggregatesModel.Identity.RoleAggregate;
 
 namespace NetCorePal.D3Shop.Admin.Shared.Responses;
 
-public class AdminUserResponse(AdminUserId id, string name, string phone, IEnumerable<string> roles, string realName,int status,string email, DateTimeOffset createdAt)
+public class AdminUserResponse(AdminUserId id, string name, string phone, IEnumerable<string> roles, string realName, int status, string email, DateTimeOffset createdAt)
 {
     public AdminUserId Id { get; } = id;
     public string Name { get; set; } = name;

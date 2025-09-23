@@ -1,4 +1,4 @@
-﻿namespace NetCorePal.D3Shop.Admin.Shared.Const;
+namespace NetCorePal.D3Shop.Admin.Shared.Const;
 
 public static class AppClaim
 {

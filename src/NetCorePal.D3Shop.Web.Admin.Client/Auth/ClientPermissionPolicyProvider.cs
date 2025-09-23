@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Options;
 using NetCorePal.D3Shop.Admin.Shared.Authorization;
 using NetCorePal.D3Shop.Admin.Shared.Const;

@@ -1,4 +1,3 @@
-using System.Reflection;
 using AntDesign;
 using FluentValidation;
 using FluentValidation.AspNetCore;
@@ -29,6 +28,7 @@ using Prometheus;
 using Refit;
 using Serilog;
 using StackExchange.Redis;
+using System.Reflection;
 using _Imports = NetCorePal.D3Shop.Web.Admin.Client._Imports;
 
 Log.Logger = new LoggerConfiguration()

@@ -1,4 +1,4 @@
-﻿namespace NetCorePal.D3Shop.Web.Admin.Client;
+namespace NetCorePal.D3Shop.Web.Admin.Client;
 
 public class ServiceExceptionHandler(MessageService messageService) : DelegatingHandler
 {

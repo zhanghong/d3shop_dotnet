@@ -1,4 +1,4 @@
-﻿using FluentValidation;
+using FluentValidation;
 using NetCorePal.D3Shop.Admin.Shared.Dtos.Identity;
 using NetCorePal.D3Shop.Domain.AggregatesModel.Identity.DepartmentAggregate;
 using NetCorePal.D3Shop.Infrastructure.Repositories.Identity.Admin;

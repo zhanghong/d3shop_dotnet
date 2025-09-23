@@ -1,4 +1,4 @@
-﻿using MediatR;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
 using NetCorePal.D3Shop.Domain.AggregatesModel.DeliverAggregate;
 using NetCorePal.D3Shop.Domain.AggregatesModel.Identity.AdminUserAggregate;

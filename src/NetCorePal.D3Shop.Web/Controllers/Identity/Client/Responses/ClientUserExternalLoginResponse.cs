@@ -1,4 +1,4 @@
-﻿namespace NetCorePal.D3Shop.Web.Controllers.Identity.Client.Responses;
+namespace NetCorePal.D3Shop.Web.Controllers.Identity.Client.Responses;
 
 public class ClientUserExternalLoginResponse
 {
@@ -12,7 +12,7 @@ public class ClientUserExternalLoginResponse
     public static ClientUserExternalLoginResponse NeedSignUp(string signupToken)
     {
         return new ClientUserExternalLoginResponse
-            { RequiresSignUp = true, SignupToken = signupToken };
+        { RequiresSignUp = true, SignupToken = signupToken };
     }
 
     public static ClientUserExternalLoginResponse Success(string accessToken, string refreshToken,
@@ -20,7 +20,10 @@ public class ClientUserExternalLoginResponse
     {
         return new ClientUserExternalLoginResponse
         {
-            IsSuccess = true, AccessToken = accessToken, RefreshToken = refreshToken, TokenExpiryTime = tokenExpiryTime
+            IsSuccess = true,
+            AccessToken = accessToken,
+            RefreshToken = refreshToken,
+            TokenExpiryTime = tokenExpiryTime
         };
     }
 }

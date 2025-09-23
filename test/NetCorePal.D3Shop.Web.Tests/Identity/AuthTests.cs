@@ -1,8 +1,8 @@
-﻿using System.Net;
-using System.Net.Http.Headers;
 using NetCorePal.D3Shop.Domain.AggregatesModel.Identity.AdminUserAggregate;
 using NetCorePal.D3Shop.Infrastructure;
 using NetCorePal.D3Shop.Web.Helper;
+using System.Net;
+using System.Net.Http.Headers;
 
 namespace NetCorePal.D3Shop.Web.Tests.Identity;
 

@@ -1,10 +1,10 @@
-using System;
-using System.Threading;
-using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using NetCorePal.D3Shop.Web.AuthenticationServer.Data;
 using OpenIddict.Abstractions;
+using System;
+using System.Threading;
+using System.Threading.Tasks;
 using static OpenIddict.Abstractions.OpenIddictConstants;
 
 namespace NetCorePal.D3Shop.Web.AuthenticationServer;

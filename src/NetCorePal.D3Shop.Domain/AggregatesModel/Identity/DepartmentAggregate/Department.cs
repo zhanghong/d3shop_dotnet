@@ -1,7 +1,7 @@
-﻿using NetCorePal.D3Shop.Domain.AggregatesModel.Identity.AdminUserAggregate;
+using NetCorePal.D3Shop.Domain.AggregatesModel.Identity.AdminUserAggregate;
+using NetCorePal.D3Shop.Domain.DomainEvents.Identity.Admin;
 using NetCorePal.Extensions.Domain;
 using NetCorePal.Extensions.Primitives;
-using NetCorePal.D3Shop.Domain.DomainEvents.Identity.Admin;
 using System.Runtime.CompilerServices;
 
 namespace NetCorePal.D3Shop.Domain.AggregatesModel.Identity.DepartmentAggregate
@@ -130,9 +130,9 @@ namespace NetCorePal.D3Shop.Domain.AggregatesModel.Identity.DepartmentAggregate
             AddDomainEvent(new DepartmentInfoChangedDomainEvent(this));
         }
 
-        
 
-     
+
+
 
         /// <summary>
         /// 删除部门

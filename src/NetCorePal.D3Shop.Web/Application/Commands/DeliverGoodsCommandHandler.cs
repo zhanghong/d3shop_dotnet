@@ -1,4 +1,4 @@
-﻿using NetCorePal.D3Shop.Domain.AggregatesModel.DeliverAggregate;
+using NetCorePal.D3Shop.Domain.AggregatesModel.DeliverAggregate;
 using NetCorePal.D3Shop.Infrastructure.Repositories;
 using NetCorePal.Extensions.Primitives;
 

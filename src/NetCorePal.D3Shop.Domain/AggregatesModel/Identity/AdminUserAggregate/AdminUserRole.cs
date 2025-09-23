@@ -1,4 +1,4 @@
-﻿using NetCorePal.D3Shop.Domain.AggregatesModel.Identity.RoleAggregate;
+using NetCorePal.D3Shop.Domain.AggregatesModel.Identity.RoleAggregate;
 
 namespace NetCorePal.D3Shop.Domain.AggregatesModel.Identity.AdminUserAggregate
 {

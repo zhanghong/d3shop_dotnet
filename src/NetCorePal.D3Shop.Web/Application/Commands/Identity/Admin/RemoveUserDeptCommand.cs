@@ -23,4 +23,4 @@ public class RemoveUserDeptCommandHandler(AdminUserRepository adminUserRepositor
 
         user.RemoveUserDept(request.DeptId);
     }
-} 
+}

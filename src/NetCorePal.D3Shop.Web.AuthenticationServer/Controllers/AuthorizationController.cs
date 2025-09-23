@@ -1,8 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Claims;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
@@ -16,6 +11,11 @@ using NetCorePal.D3Shop.Web.AuthenticationServer.Helpers;
 using NetCorePal.D3Shop.Web.AuthenticationServer.ViewModels.Authorization;
 using OpenIddict.Abstractions;
 using OpenIddict.Server.AspNetCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Claims;
+using System.Threading.Tasks;
 using static OpenIddict.Abstractions.OpenIddictConstants;
 
 namespace NetCorePal.D3Shop.Web.AuthenticationServer.Controllers;
@@ -92,10 +92,10 @@ public class AuthorizationController(
         // Retrieve the permanent authorizations associated with the user and the calling client application.
         var authorizations = await authorizationManager.FindAsync(
             subject: await userManager.GetUserIdAsync(user),
-            client : await applicationManager.GetIdAsync(application),
-            status : Statuses.Valid,
-            type   : AuthorizationTypes.Permanent,
-            scopes : request.GetScopes()).ToListAsync();
+            client: await applicationManager.GetIdAsync(application),
+            status: Statuses.Valid,
+            type: AuthorizationTypes.Permanent,
+            scopes: request.GetScopes()).ToListAsync();
 
         switch (await applicationManager.GetConsentTypeAsync(application))
         {
@@ -140,10 +140,10 @@ public class AuthorizationController(
                 var authorization = authorizations.LastOrDefault();
                 authorization ??= await authorizationManager.CreateAsync(
                     identity: identity,
-                    subject : await userManager.GetUserIdAsync(user),
-                    client  : await applicationManager.GetIdAsync(application),
-                    type    : AuthorizationTypes.Permanent,
-                    scopes  : identity.GetScopes());
+                    subject: await userManager.GetUserIdAsync(user),
+                    client: await applicationManager.GetIdAsync(application),
+                    type: AuthorizationTypes.Permanent,
+                    scopes: identity.GetScopes());
 
                 identity.SetAuthorizationId(await authorizationManager.GetIdAsync(authorization));
                 identity.SetDestinations(GetDestinations);
@@ -152,7 +152,7 @@ public class AuthorizationController(
 
             // At this point, no authorization was found in the database and an error must be returned
             // if the client application specified prompt=none in the authorization request.
-            case ConsentTypes.Explicit   when request.HasPromptValue(PromptValues.None):
+            case ConsentTypes.Explicit when request.HasPromptValue(PromptValues.None):
             case ConsentTypes.Systematic when request.HasPromptValue(PromptValues.None):
                 return Forbid(
                     authenticationSchemes: OpenIddictServerAspNetCoreDefaults.AuthenticationScheme,
@@ -164,11 +164,12 @@ public class AuthorizationController(
                     }));
 
             // In every other case, render the consent form.
-            default: return View(new AuthorizeViewModel
-            {
-                ApplicationName = await applicationManager.GetLocalizedDisplayNameAsync(application),
-                Scope = request.Scope
-            });
+            default:
+                return View(new AuthorizeViewModel
+                {
+                    ApplicationName = await applicationManager.GetLocalizedDisplayNameAsync(application),
+                    Scope = request.Scope
+                });
         }
     }
 
@@ -190,10 +191,10 @@ public class AuthorizationController(
         // Retrieve the permanent authorizations associated with the user and the calling client application.
         var authorizations = await authorizationManager.FindAsync(
             subject: await userManager.GetUserIdAsync(user),
-            client : await applicationManager.GetIdAsync(application),
-            status : Statuses.Valid,
-            type   : AuthorizationTypes.Permanent,
-            scopes : request.GetScopes()).ToListAsync();
+            client: await applicationManager.GetIdAsync(application),
+            status: Statuses.Valid,
+            type: AuthorizationTypes.Permanent,
+            scopes: request.GetScopes()).ToListAsync();
 
         // Note: the same check is already made in the other action but is repeated
         // here to ensure a malicious user can't abuse this POST-only endpoint and
@@ -234,10 +235,10 @@ public class AuthorizationController(
         var authorization = authorizations.LastOrDefault();
         authorization ??= await authorizationManager.CreateAsync(
             identity: identity,
-            subject : await userManager.GetUserIdAsync(user),
-            client  : await applicationManager.GetIdAsync(application),
-            type    : AuthorizationTypes.Permanent,
-            scopes  : identity.GetScopes());
+            subject: await userManager.GetUserIdAsync(user),
+            client: await applicationManager.GetIdAsync(application),
+            type: AuthorizationTypes.Permanent,
+            scopes: identity.GetScopes());
 
         identity.SetAuthorizationId(await authorizationManager.GetIdAsync(authorization));
         identity.SetDestinations(GetDestinations);

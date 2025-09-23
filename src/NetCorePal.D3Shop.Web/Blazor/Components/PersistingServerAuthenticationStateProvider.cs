@@ -1,4 +1,3 @@
-using System.Diagnostics;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.Server;
@@ -8,6 +7,7 @@ using Microsoft.Extensions.Options;
 using NetCorePal.D3Shop.Domain.AggregatesModel.Identity.AdminUserAggregate;
 using NetCorePal.D3Shop.Web.Admin.Client;
 using NetCorePal.D3Shop.Web.Application.Queries.Identity.Admin;
+using System.Diagnostics;
 
 namespace NetCorePal.D3Shop.Web.Blazor.Components
 {

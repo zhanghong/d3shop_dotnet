@@ -1,8 +1,8 @@
-﻿using NetCorePal.D3Shop.Domain.AggregatesModel.Identity.AdminUserAggregate;
+using NetCorePal.D3Shop.Domain.AggregatesModel.Identity.AdminUserAggregate;
 
 namespace NetCorePal.D3Shop.Admin.Shared.Dtos.Identity
 {
-   
+
     /// <summary>
     /// 更新部门用户信息
     /// </summary>

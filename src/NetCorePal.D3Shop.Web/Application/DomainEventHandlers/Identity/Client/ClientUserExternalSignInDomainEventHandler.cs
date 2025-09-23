@@ -1,4 +1,4 @@
-﻿using MediatR;
+using MediatR;
 using NetCorePal.D3Shop.Domain.DomainEvents.Identity.Client;
 using NetCorePal.D3Shop.Web.Application.Commands.Identity.Client;
 using NetCorePal.Extensions.Domain;

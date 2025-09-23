@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using NetCorePal.Extensions.Dto;
 using NetCorePal.Extensions.Primitives;
 using Rougamo;
@@ -37,30 +37,30 @@ public class KnownExceptionHandlerAttribute : MoAttribute
         {
             // 处理泛型 ResponseData<T> 
             case true when returnType.GetGenericTypeDefinition() == typeof(ResponseData<>):
-            {
-                var genericArgument = returnType.GetGenericArguments()[0];
-                var responseInstance = Activator.CreateInstance(returnType,
-                    Activator.CreateInstance(genericArgument),
-                    false, ex.Message, ex.ErrorCode, ex.ErrorData);
-
-                context.HandledException(this, responseInstance!);
-                return;
-            }
-            // 处理泛型 Task<ResponseData<T>>
-            case true when returnType.GetGenericTypeDefinition() == typeof(Task<>):
-            {
-                var taskArgument = returnType.GetGenericArguments()[0];
-
-                if (taskArgument.IsGenericType && taskArgument.GetGenericTypeDefinition() == typeof(ResponseData<>))
                 {
-                    var responseInstance = Activator.CreateInstance(taskArgument,
-                        default, false, ex.Message, ex.ErrorCode, ex.ErrorData);
+                    var genericArgument = returnType.GetGenericArguments()[0];
+                    var responseInstance = Activator.CreateInstance(returnType,
+                        Activator.CreateInstance(genericArgument),
+                        false, ex.Message, ex.ErrorCode, ex.ErrorData);
 
                     context.HandledException(this, responseInstance!);
+                    return;
                 }
+            // 处理泛型 Task<ResponseData<T>>
+            case true when returnType.GetGenericTypeDefinition() == typeof(Task<>):
+                {
+                    var taskArgument = returnType.GetGenericArguments()[0];
 
-                break;
-            }
+                    if (taskArgument.IsGenericType && taskArgument.GetGenericTypeDefinition() == typeof(ResponseData<>))
+                    {
+                        var responseInstance = Activator.CreateInstance(taskArgument,
+                            default, false, ex.Message, ex.ErrorCode, ex.ErrorData);
+
+                        context.HandledException(this, responseInstance!);
+                    }
+
+                    break;
+                }
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿using FluentValidation;
+using FluentValidation;
 using NetCorePal.D3Shop.Domain.AggregatesModel.Identity.AdminUserAggregate;
 using NetCorePal.D3Shop.Infrastructure.Repositories.Identity.Admin;
 using NetCorePal.D3Shop.Web.Application.Commands.Identity.Admin.Dto;
@@ -45,7 +45,7 @@ public class CreateAdminUserCommandHandler(IAdminUserRepository adminUserReposit
 
         var adminUser = new AdminUser(request.Name, request.Phone,
             request.Password,
-            adminUserRoles, adminUserPermissions,request.RealName, request.Status, request.Email);
+            adminUserRoles, adminUserPermissions, request.RealName, request.Status, request.Email);
 
         await adminUserRepository.AddAsync(adminUser, cancellationToken);
         return adminUser.Id;

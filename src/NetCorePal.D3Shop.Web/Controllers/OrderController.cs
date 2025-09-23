@@ -1,4 +1,4 @@
-﻿using DotNetCore.CAP;
+using DotNetCore.CAP;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using NetCorePal.D3Shop.Domain.AggregatesModel.OrderAggregate;

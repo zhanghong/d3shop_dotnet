@@ -1,4 +1,4 @@
-﻿using MediatR;
+using MediatR;
 using NetCorePal.D3Shop.Web.Application.Commands;
 using NetCorePal.Extensions.DistributedTransactions;
 

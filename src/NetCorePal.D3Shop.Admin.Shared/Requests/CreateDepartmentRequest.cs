@@ -1,4 +1,4 @@
-﻿using NetCorePal.D3Shop.Admin.Shared.Dtos.Identity;
+using NetCorePal.D3Shop.Admin.Shared.Dtos.Identity;
 using NetCorePal.D3Shop.Domain.AggregatesModel.Identity.DepartmentAggregate;
 using System.ComponentModel.DataAnnotations;
 
@@ -16,6 +16,4 @@ public class CreateDepartmentRequest
 
     public string Remark { get; set; } = string.Empty;
 
-   
 }
-

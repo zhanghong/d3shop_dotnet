@@ -1,10 +1,10 @@
-﻿using NetCorePal.D3Shop.Admin.Shared.Requests;
-using NetCorePal.D3Shop.Domain.AggregatesModel.Identity.AdminUserAggregate;
-using System.Net.Http.Headers;
-using NetCorePal.D3Shop.Domain.AggregatesModel.Identity.DepartmentAggregate;
 using NetCorePal.D3Shop.Admin.Shared.Dtos.Identity;
-using NetCorePal.Extensions.Dto;
+using NetCorePal.D3Shop.Admin.Shared.Requests;
 using NetCorePal.D3Shop.Admin.Shared.Responses;
+using NetCorePal.D3Shop.Domain.AggregatesModel.Identity.AdminUserAggregate;
+using NetCorePal.D3Shop.Domain.AggregatesModel.Identity.DepartmentAggregate;
+using NetCorePal.Extensions.Dto;
+using System.Net.Http.Headers;
 
 namespace NetCorePal.D3Shop.Web.Tests.Identity
 {
@@ -39,7 +39,7 @@ namespace NetCorePal.D3Shop.Web.Tests.Identity
                 Name = "TestDepartment",
                 Remark = "test decription",
                 Pid = new DeptId(0)
-                
+
 
             };
 
@@ -99,7 +99,7 @@ namespace NetCorePal.D3Shop.Web.Tests.Identity
             // Assert
             response.EnsureSuccessStatusCode();
             var responseData = await response.Content.ReadAsStringAsync();
-            Assert.Contains("success", responseData, StringComparison.OrdinalIgnoreCase); 
+            Assert.Contains("success", responseData, StringComparison.OrdinalIgnoreCase);
         }
 
         #endregion
@@ -118,7 +118,7 @@ namespace NetCorePal.D3Shop.Web.Tests.Identity
             // Assert
             response.EnsureSuccessStatusCode();
             var responseData = await response.Content.ReadAsStringAsync();
-            Assert.Contains("success", responseData, StringComparison.OrdinalIgnoreCase); 
+            Assert.Contains("success", responseData, StringComparison.OrdinalIgnoreCase);
         }
 
         #endregion

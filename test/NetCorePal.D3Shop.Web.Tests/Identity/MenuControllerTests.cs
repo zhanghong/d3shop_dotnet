@@ -204,7 +204,7 @@ namespace NetCorePal.D3Shop.Web.Tests.Identity
             Assert.Equal(updateRequest.Status, getResponseData.Data.Status);
         }
 
-        
+
 
         #endregion
 
@@ -270,7 +270,7 @@ namespace NetCorePal.D3Shop.Web.Tests.Identity
             Assert.Equal("菜单不存在", verifyResponseData.Message);
 
         }
-       
+
 
         #endregion
 

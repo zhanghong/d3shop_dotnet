@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Components.Forms;
+using Microsoft.AspNetCore.Components.Forms;
 
 namespace NetCorePal.D3Shop.Web.Admin.Client.Components.Identity.Role;
 
@@ -38,7 +38,7 @@ public partial class AddRole
     {
         _modalConfirmLoading = true;
         StateHasChanged();
-       // _newRoleModel.PermissionCodes = _assignedPermissionCodes;
+        // _newRoleModel.PermissionCodes = _assignedPermissionCodes;
         var response = await RolesService.CreateRole(_newRoleModel);
         if (response.Success)
         {

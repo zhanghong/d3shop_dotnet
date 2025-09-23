@@ -1,4 +1,4 @@
-﻿using MediatR;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using NetCorePal.D3Shop.Admin.Shared.Permission;
 using NetCorePal.D3Shop.Admin.Shared.Requests;
@@ -79,7 +79,7 @@ public class RoleController(IMediator mediator, RoleQuery roleQuery, MenuQuery m
                .ToList();
 
         await mediator.Send(
-            new UpdateRoleInfoCommand(id, request.Name, request.Description,request.Status,permissions),
+            new UpdateRoleInfoCommand(id, request.Name, request.Description, request.Status, permissions),
             CancellationToken);
 
         return new ResponseData();

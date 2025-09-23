@@ -1,4 +1,4 @@
-﻿using System.Net;
+using System.Net;
 
 namespace NetCorePal.D3Shop.Web.Helper;
 

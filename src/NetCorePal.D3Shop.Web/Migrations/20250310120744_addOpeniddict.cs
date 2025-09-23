@@ -1,6 +1,6 @@
-﻿using System;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
+using System;
 
 #nullable disable
 
@@ -15,7 +15,7 @@ namespace NetCorePal.D3Shop.Web.Migrations
             migrationBuilder.DropForeignKey(
                 name: "FK_rolePermissions_roles_RoleId",
                 table: "rolePermissions");
-            
+
             migrationBuilder.AlterColumn<long>(
                 name: "Id",
                 table: "roles",
@@ -25,7 +25,7 @@ namespace NetCorePal.D3Shop.Web.Migrations
                 oldType: "bigint")
                 .OldAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
                 .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.None);
-            
+
             migrationBuilder.AddForeignKey(
                 name: "FK_rolePermissions_roles_RoleId",
                 table: "rolePermissions",
@@ -33,7 +33,7 @@ namespace NetCorePal.D3Shop.Web.Migrations
                 principalTable: "roles",
                 principalColumn: "Id",
                 onDelete: ReferentialAction.Cascade,
-                onUpdate:ReferentialAction.Restrict);
+                onUpdate: ReferentialAction.Restrict);
 
 
             migrationBuilder.AlterColumn<long>(
@@ -48,7 +48,7 @@ namespace NetCorePal.D3Shop.Web.Migrations
             migrationBuilder.DropForeignKey(
                 name: "FK_departmentUser_departments_DeptId",
                 table: "departmentUser");
-            
+
             migrationBuilder.AlterColumn<long>(
                 name: "Id",
                 table: "departments",
@@ -58,7 +58,7 @@ namespace NetCorePal.D3Shop.Web.Migrations
                 oldType: "bigint")
                 .OldAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
                 .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.None);
-            
+
             migrationBuilder.AddForeignKey(
                 name: "FK_departmentUser_departments_DeptId",
                 table: "departmentUser",
@@ -66,7 +66,7 @@ namespace NetCorePal.D3Shop.Web.Migrations
                 principalTable: "departments",
                 principalColumn: "Id",
                 onDelete: ReferentialAction.Restrict,
-                onUpdate:ReferentialAction.Restrict);
+                onUpdate: ReferentialAction.Restrict);
 
             migrationBuilder.AlterColumn<long>(
                 name: "Id",
@@ -88,16 +88,16 @@ namespace NetCorePal.D3Shop.Web.Migrations
                 oldNullable: true);
 
             // 手动删除外键
-            
+
             migrationBuilder.DropForeignKey(
                 name: "FK_userDeliveryAddresses_clientUsers_UserId",
                 table: "userDeliveryAddresses");
-            
+
             migrationBuilder.DropForeignKey(
                 name: "FK_userThirdPartyLogins_clientUsers_UserId",
                 table: "userThirdPartyLogins");
 
-            
+
             migrationBuilder.AlterColumn<long>(
                 name: "Id",
                 table: "clientUsers",
@@ -107,7 +107,7 @@ namespace NetCorePal.D3Shop.Web.Migrations
                 oldType: "bigint")
                 .OldAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
                 .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.None);
-            
+
             migrationBuilder.AddForeignKey(
                 name: "FK_userDeliveryAddresses_clientUsers_UserId",
                 table: "userDeliveryAddresses",
@@ -115,8 +115,8 @@ namespace NetCorePal.D3Shop.Web.Migrations
                 principalTable: "clientUsers",
                 principalColumn: "Id",
                 onDelete: ReferentialAction.Restrict,
-                onUpdate:ReferentialAction.Restrict);
-            
+                onUpdate: ReferentialAction.Restrict);
+
             migrationBuilder.AddForeignKey(
                 name: "FK_userThirdPartyLogins_clientUsers_UserId",
                 table: "userThirdPartyLogins",
@@ -124,9 +124,9 @@ namespace NetCorePal.D3Shop.Web.Migrations
                 principalTable: "clientUsers",
                 principalColumn: "Id",
                 onDelete: ReferentialAction.Restrict,
-                onUpdate:ReferentialAction.Restrict);
-            
-         
+                onUpdate: ReferentialAction.Restrict);
+
+
 
             // migrationBuilder.AddColumn<DateTime>(
             //     name: "LoginExpiryDate",
@@ -158,20 +158,20 @@ namespace NetCorePal.D3Shop.Web.Migrations
                 oldType: "bigint")
                 .OldAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn);
 
-            
-            
+
+
             migrationBuilder.DropForeignKey(
                 name: "FK_adminUserPermissions_adminUsers_AdminUserId",
                 table: "adminUserPermissions");
-            
+
             migrationBuilder.DropForeignKey(
                 name: "FK_adminUserRoles_adminUsers_AdminUserId",
                 table: "adminUserRoles");
-            
+
             migrationBuilder.DropForeignKey(
                 name: "FK_userDepts_adminUsers_AdminUserId",
                 table: "userDepts");
-            
+
             migrationBuilder.AlterColumn<long>(
                 name: "Id",
                 table: "adminUsers",
@@ -182,7 +182,7 @@ namespace NetCorePal.D3Shop.Web.Migrations
                 .OldAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
                 .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.None);
 
-            
+
             migrationBuilder.AddForeignKey(
                 name: "FK_adminUserPermissions_adminUsers_AdminUserId",
                 table: "adminUserPermissions",
@@ -190,8 +190,8 @@ namespace NetCorePal.D3Shop.Web.Migrations
                 principalTable: "adminUsers",
                 principalColumn: "Id",
                 onDelete: ReferentialAction.Restrict,
-                onUpdate:ReferentialAction.Restrict);
-            
+                onUpdate: ReferentialAction.Restrict);
+
             migrationBuilder.AddForeignKey(
                 name: "FK_adminUserRoles_adminUsers_AdminUserId",
                 table: "adminUserRoles",
@@ -199,8 +199,8 @@ namespace NetCorePal.D3Shop.Web.Migrations
                 principalTable: "adminUsers",
                 principalColumn: "Id",
                 onDelete: ReferentialAction.Restrict,
-                onUpdate:ReferentialAction.Restrict);
-            
+                onUpdate: ReferentialAction.Restrict);
+
             migrationBuilder.AddForeignKey(
                 name: "FK_userDepts_adminUsers_AdminUserId",
                 table: "userDepts",
@@ -208,9 +208,9 @@ namespace NetCorePal.D3Shop.Web.Migrations
                 principalTable: "adminUsers",
                 principalColumn: "Id",
                 onDelete: ReferentialAction.Restrict,
-                onUpdate:ReferentialAction.Restrict);
+                onUpdate: ReferentialAction.Restrict);
 
-            
+
             migrationBuilder.CreateTable(
                 name: "OpenIddictApplications",
                 columns: table => new

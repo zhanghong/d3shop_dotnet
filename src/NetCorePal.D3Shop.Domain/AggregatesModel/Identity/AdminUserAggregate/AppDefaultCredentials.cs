@@ -1,4 +1,4 @@
-﻿namespace NetCorePal.D3Shop.Domain.AggregatesModel.Identity.AdminUserAggregate
+namespace NetCorePal.D3Shop.Domain.AggregatesModel.Identity.AdminUserAggregate
 {
     public static class AppDefaultCredentials
     {

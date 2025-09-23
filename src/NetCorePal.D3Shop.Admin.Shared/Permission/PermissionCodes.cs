@@ -1,4 +1,4 @@
-﻿namespace NetCorePal.D3Shop.Admin.Shared.Permission;
+namespace NetCorePal.D3Shop.Admin.Shared.Permission;
 
 public static class PermissionCodes
 {

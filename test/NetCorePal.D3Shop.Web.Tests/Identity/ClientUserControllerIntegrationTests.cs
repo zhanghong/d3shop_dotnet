@@ -1,5 +1,3 @@
-﻿using System.Net.Http.Json;
-using System.Security.Claims;
 using Microsoft.EntityFrameworkCore;
 using NetCorePal.D3Shop.Domain.AggregatesModel.Identity.ClientUserAggregate;
 using NetCorePal.D3Shop.Infrastructure;
@@ -8,6 +6,8 @@ using NetCorePal.D3Shop.Web.Controllers.Identity.Client.Requests;
 using NetCorePal.D3Shop.Web.Helper;
 using NetCorePal.Extensions.Dto;
 using NetCorePal.Extensions.Jwt;
+using System.Net.Http.Json;
+using System.Security.Claims;
 
 namespace NetCorePal.D3Shop.Web.Tests.Identity;
 

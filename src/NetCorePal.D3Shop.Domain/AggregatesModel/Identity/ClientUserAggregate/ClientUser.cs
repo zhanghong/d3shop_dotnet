@@ -47,7 +47,7 @@ public class ClientUser : Entity<ClientUserId>, IAggregateRoot
     public DateTimeOffset DisabledTime { get; private set; }
     public string DisabledReason { get; private set; } = string.Empty;
     public int PasswordFailedTimes { get; private set; }
-    public bool IsTwoFactorEnabled { get; private set; }
+    public bool IsTwoFactorEnabled { get; }
     public ICollection<ClientUserRefreshToken> RefreshTokens { get; } = [];
     public DateTimeOffset LoginExpiryDate { get; private set; }
 

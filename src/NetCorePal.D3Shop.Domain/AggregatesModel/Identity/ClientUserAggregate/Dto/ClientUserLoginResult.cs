@@ -1,4 +1,4 @@
-﻿namespace NetCorePal.D3Shop.Domain.AggregatesModel.Identity.ClientUserAggregate.Dto;
+namespace NetCorePal.D3Shop.Domain.AggregatesModel.Identity.ClientUserAggregate.Dto;
 
 public class ClientUserLoginResult
 {

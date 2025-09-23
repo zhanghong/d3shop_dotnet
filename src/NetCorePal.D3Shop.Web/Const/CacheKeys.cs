@@ -1,4 +1,4 @@
-﻿namespace NetCorePal.D3Shop.Web.Const;
+namespace NetCorePal.D3Shop.Web.Const;
 
 public static class CacheKeys
 {

@@ -1,4 +1,4 @@
-﻿global using AntDesign;
+global using AntDesign;
 global using Microsoft.AspNetCore.Components;
 global using NetCorePal.D3Shop.Admin.Shared.Requests;
 global using NetCorePal.D3Shop.Admin.Shared.Responses;

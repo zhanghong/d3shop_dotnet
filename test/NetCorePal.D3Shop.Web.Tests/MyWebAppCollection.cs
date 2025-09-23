@@ -1,4 +1,4 @@
-﻿namespace NetCorePal.D3Shop.Web.Tests;
+namespace NetCorePal.D3Shop.Web.Tests;
 
 [CollectionDefinition("web")]
 public class MyWebAppCollection : ICollectionFixture<MyWebApplicationFactory>

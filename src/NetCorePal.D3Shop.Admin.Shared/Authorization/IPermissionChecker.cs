@@ -1,4 +1,4 @@
-﻿using System.Security.Claims;
+using System.Security.Claims;
 
 namespace NetCorePal.D3Shop.Admin.Shared.Authorization;
 

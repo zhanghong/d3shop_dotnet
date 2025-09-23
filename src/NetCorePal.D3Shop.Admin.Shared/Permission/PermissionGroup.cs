@@ -1,4 +1,4 @@
-﻿using System.Collections.Immutable;
+using System.Collections.Immutable;
 
 namespace NetCorePal.D3Shop.Admin.Shared.Permission;
 

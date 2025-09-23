@@ -1,4 +1,4 @@
-﻿using NetCorePal.D3Shop.Admin.Shared.Const;
+using NetCorePal.D3Shop.Admin.Shared.Const;
 using AuthorizeAttribute = Microsoft.AspNetCore.Authorization.AuthorizeAttribute;
 
 namespace NetCorePal.D3Shop.Web.Admin.Client.Auth;

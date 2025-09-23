@@ -1,6 +1,6 @@
-﻿using NetCorePal.Extensions.Repository.EntityFrameworkCore;
-using NetCorePal.Extensions.Repository;
 using NetCorePal.D3Shop.Domain.AggregatesModel.DeliverAggregate;
+using NetCorePal.Extensions.Repository;
+using NetCorePal.Extensions.Repository.EntityFrameworkCore;
 
 namespace NetCorePal.D3Shop.Infrastructure.Repositories
 {

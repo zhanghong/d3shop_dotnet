@@ -1,11 +1,11 @@
-﻿using System.Net.Http.Headers;
-using System.Net.Http.Json;
 using NetCorePal.D3Shop.Admin.Shared.Permission;
 using NetCorePal.D3Shop.Admin.Shared.Requests;
 using NetCorePal.D3Shop.Admin.Shared.Responses;
 using NetCorePal.D3Shop.Domain.AggregatesModel.Identity.AdminUserAggregate;
 using NetCorePal.D3Shop.Domain.AggregatesModel.Identity.RoleAggregate;
 using NetCorePal.Extensions.Dto;
+using System.Net.Http.Headers;
+using System.Net.Http.Json;
 
 namespace NetCorePal.D3Shop.Web.Tests.Identity;
 
@@ -100,7 +100,7 @@ public class AdminUserRoleIntegrationTests
     {
         // Arrange
         var createRoleRequest = new CreateRoleRequest
-            { Name = roleName, Description = roleDescription, Permissions = [] };
+        { Name = roleName, Description = roleDescription, Permissions = [] };
 
         // Act
         var response = await _client.PostAsJsonAsync("api/Role/CreateRole", createRoleRequest);

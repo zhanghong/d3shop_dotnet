@@ -1,8 +1,8 @@
-using System.Text.Json;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using NetCorePal.D3Shop.Domain.AggregatesModel.Identity.MenuAggregate;
+using System.Text.Json;
 
 namespace NetCorePal.D3Shop.Infrastructure.EntityConfigurations.Identity;
 

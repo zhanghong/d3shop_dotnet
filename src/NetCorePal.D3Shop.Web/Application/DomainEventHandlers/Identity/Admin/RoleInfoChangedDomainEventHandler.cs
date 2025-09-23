@@ -1,4 +1,4 @@
-﻿using MediatR;
+using MediatR;
 using NetCorePal.D3Shop.Domain.DomainEvents.Identity.Admin;
 using NetCorePal.D3Shop.Web.Application.Commands.Identity.Admin;
 using NetCorePal.D3Shop.Web.Application.Queries.Identity.Admin;
