@@ -74,6 +74,10 @@ namespace NetCorePal.D3Shop.Domain.AggregatesModel.Identity.MenuAggregate
         /// 菜单元数据
         /// </summary>
         public MenuMeta? Meta { get; private set; }
+        public DateTimeOffset CreatedAt { get; init; }
+        public UpdateTime UpdatedAt { get; private set; } = new UpdateTime(DateTimeOffset.UtcNow);
+        public Deleted IsDeleted { get; private set; } = new Deleted(false);
+        public DeletedTime? DeletedAt { get; private set; }
 
 
         /// <summary>

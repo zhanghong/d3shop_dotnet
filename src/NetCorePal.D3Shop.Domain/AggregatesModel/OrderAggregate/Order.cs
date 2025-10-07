@@ -28,6 +28,10 @@ namespace NetCorePal.D3Shop.Domain.AggregatesModel.OrderAggregate
         public string Name { get; private set; } = string.Empty;
 
         public int Count { get; private set; }
+        public DateTimeOffset CreatedAt { get; init; }
+        public UpdateTime UpdatedAt { get; private set; } = new UpdateTime(DateTimeOffset.UtcNow);
+        public Deleted IsDeleted { get; private set; } = new Deleted(false);
+        public DeletedTime? DeletedAt { get; private set; }
 
         public void OrderPaid()
         {

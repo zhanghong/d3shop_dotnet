@@ -13,39 +13,14 @@ namespace NetCorePal.D3Shop.Domain.AggregatesModel.Identity.DepartmentAggregate
     /// </summary>
     public class Department : Entity<DepartmentId>, IAggregateRoot
     {
-
-        /// <summary>
-        /// 部门名称
-        /// </summary>
         public string Name { get; private set; } = string.Empty;
-
-        /// <summary>
-        /// 部门编码
-        /// </summary>
         public string Code { get; private set; } = string.Empty;
-
-        /// <summary>
-        /// 部门内部人数
-        /// </summary>
         public int UserCount { get; private set; }
-
-        /// <summary>
-        /// 是否启用
-        /// </summary>
         public int Status { get; private set; }
-
-        /// <summary>
-        /// 描述
-        /// </summary>
         public string Description { get; private set; } = string.Empty;
-
-        /// <summary>
-        /// 父部门id
-        /// </summary>
         public DepartmentId ParentId { get; private set; } = new DepartmentId(Guid.Empty);
-
         public DateTimeOffset CreatedAt { get; init; }
-
+        public UpdateTime UpdatedAt { get; private set; } = new UpdateTime(DateTimeOffset.UtcNow);
         public bool IsDeleted { get; private set; }
         public DateTimeOffset? DeletedAt { get; private set; }
 
@@ -129,10 +104,6 @@ namespace NetCorePal.D3Shop.Domain.AggregatesModel.Identity.DepartmentAggregate
             Status = status;
             AddDomainEvent(new DepartmentInfoChangedDomainEvent(this));
         }
-
-
-
-
 
         /// <summary>
         /// 删除部门

@@ -28,6 +28,10 @@ public class UserThirdPartyLogin : Entity<ThirdPartyLoginId>
     public string AppId { get; private set; } = string.Empty;
     public string OpenId { get; private set; } = string.Empty;
     public DateTimeOffset BindTime { get; private set; }
+    public DateTimeOffset CreatedAt { get; init; }
+    public UpdateTime UpdatedAt { get; private set; } = new UpdateTime(DateTimeOffset.UtcNow);
+    public Deleted IsDeleted { get; private set; } = new Deleted(false);
+    public DeletedTime? DeletedAt { get; private set; }
 
     /// <summary>
     ///     更新OpenId（重新授权后获取新标识）

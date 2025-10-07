@@ -96,5 +96,9 @@ namespace NetCorePal.D3Shop.Domain.AggregatesModel.Identity.MenuAggregate
         /// 菜单标题
         /// </summary>
         public string Title { get; set; } = string.Empty;
+        public DateTimeOffset CreatedAt { get; init; }
+        public UpdateTime UpdatedAt { get; private set; } = new UpdateTime(DateTimeOffset.UtcNow);
+        public Deleted IsDeleted { get; private set; } = new Deleted(false);
+        public DeletedTime? DeletedAt { get; private set; }
     }
 }

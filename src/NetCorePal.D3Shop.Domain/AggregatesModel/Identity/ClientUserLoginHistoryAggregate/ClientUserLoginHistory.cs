@@ -25,6 +25,7 @@ public class ClientUserLoginHistory : Entity<ClientUserLoginHistoryId>, IAggrega
         LoginMethod = loginMethod;
         IpAddress = ipAddress;
         UserAgent = userAgent;
+        CreatedAt = DateTimeOffset.UtcNow;
     }
 
     public ClientUserId UserId { get; private set; } = null!;
@@ -33,4 +34,5 @@ public class ClientUserLoginHistory : Entity<ClientUserLoginHistoryId>, IAggrega
     public string LoginMethod { get; private set; } = string.Empty;
     public string IpAddress { get; private set; } = string.Empty;
     public string UserAgent { get; private set; } = string.Empty;
+    public DateTimeOffset CreatedAt { get; init; }
 }

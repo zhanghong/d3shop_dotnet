@@ -47,6 +47,10 @@ public class UserDeliveryAddress : Entity<DeliveryAddressId>
     public string RecipientName { get; private set; } = string.Empty;
     public string Phone { get; private set; } = string.Empty;
     public bool IsDefault { get; private set; }
+    public DateTimeOffset CreatedAt { get; init; }
+    public UpdateTime UpdatedAt { get; private set; } = new UpdateTime(DateTimeOffset.UtcNow);
+    public Deleted IsDeleted { get; private set; } = new Deleted(false);
+    public DeletedTime? DeletedAt { get; private set; }
 
     internal void UpdateDetails(
         string province,

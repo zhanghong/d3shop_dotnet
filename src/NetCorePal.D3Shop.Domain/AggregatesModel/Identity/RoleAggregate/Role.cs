@@ -15,6 +15,9 @@ namespace NetCorePal.D3Shop.Domain.AggregatesModel.Identity.RoleAggregate
         public string Name { get; private set; } = string.Empty;
         public string Description { get; private set; } = string.Empty;
         public DateTimeOffset CreatedAt { get; init; }
+        public UpdateTime UpdatedAt { get; private set; } = new UpdateTime(DateTimeOffset.UtcNow);
+        public Deleted IsDeleted { get; private set; } = new Deleted(false);
+        public DeletedTime? DeletedAt { get; private set; }
 
         /// <summary>
         /// 状态
