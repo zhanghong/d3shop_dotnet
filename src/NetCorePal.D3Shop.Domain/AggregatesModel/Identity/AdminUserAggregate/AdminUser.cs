@@ -12,14 +12,10 @@ namespace NetCorePal.D3Shop.Domain.AggregatesModel.Identity.AdminUserAggregate
 
     public class AdminUser : Entity<AdminUserId>, IAggregateRoot
     {
-        protected AdminUser()
-        {
-        }
-
+        public string Types { get; private set; } = string.Empty;
         public string Name { get; private set; } = string.Empty;
         public string Phone { get; private set; } = string.Empty;
         public string Password { get; private set; } = string.Empty;
-
         public string RealName { get; private set; } = string.Empty;
         public string Email { get; private set; } = string.Empty;
 
@@ -27,17 +23,18 @@ namespace NetCorePal.D3Shop.Domain.AggregatesModel.Identity.AdminUserAggregate
         /// 0:已禁用  1:已启用
         /// </summary>
         public int Status { get; private set; } = 1;
-
         public DateTimeOffset CreatedAt { get; init; }
+        public UpdateTime UpdatedAt { get; private set; } = new UpdateTime(DateTimeOffset.UtcNow);
+        public Deleted IsDeleted { get; private set; } = new Deleted(false);
+        public DeletedTime? DeletedAt { get; private set; }
+
         public virtual ICollection<AdminUserRole> Roles { get; } = [];
-
         public virtual ICollection<UserDept> UserDepts { get; } = [];
-
-
-
         public virtual ICollection<AdminUserPermission> Permissions { get; } = [];
-        public bool IsDeleted { get; private set; }
-        public DateTimeOffset? DeletedAt { get; private set; }
+
+        protected AdminUser()
+        {
+        }
 
         public AdminUser(string name, string phone, string password,
             IEnumerable<AdminUserRole> roles, IEnumerable<AdminUserPermission> permissions, string realName, int status, string email)
@@ -188,11 +185,14 @@ namespace NetCorePal.D3Shop.Domain.AggregatesModel.Identity.AdminUserAggregate
             }
         }
 
+        public void SoftDelete()
+        {
+            IsDeleted = true;
+        }
+
         public void Delete()
         {
-            if (IsDeleted) throw new KnownException("用户已经被删除！");
-            IsDeleted = true;
-            DeletedAt = DateTimeOffset.Now;
+            SoftDelete();
         }
 
         public bool IsInRole(string roleName)

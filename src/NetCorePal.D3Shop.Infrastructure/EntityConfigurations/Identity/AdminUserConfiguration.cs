@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using NetCorePal.D3Shop.Domain.AggregatesModel.Identity.AdminUserAggregate;
 using NetCorePal.D3Shop.Domain.AggregatesModel.Identity.RoleAggregate;
+using NetCorePal.Extensions.Domain;
 using System.Text.Json;
 
 namespace NetCorePal.D3Shop.Infrastructure.EntityConfigurations.Identity;
@@ -11,9 +12,21 @@ internal class AdminUserConfiguration : IEntityTypeConfiguration<AdminUser>
 {
     public void Configure(EntityTypeBuilder<AdminUser> builder)
     {
-        builder.ToTable("login_users");
+        builder.ToTable("editors");
         builder.HasKey(au => au.Id);
-        builder.Property(au => au.Id).ValueGeneratedOnAdd();
+        builder.Property(au => au.Id).HasColumnName("id").ValueGeneratedOnAdd();
+        builder.Property(au => au.Types).HasColumnName("types").HasDefaultValue("").HasMaxLength(30).HasComment("身份类型");
+        builder.Property(au => au.Name).HasColumnName("name").HasDefaultValue("").HasMaxLength(50).HasComment("登录名");
+        builder.Property(au => au.Phone).HasColumnName("phone").HasDefaultValue("").HasMaxLength(11).HasComment("手机号码");
+        builder.Property(au => au.Password).HasColumnName("password").HasDefaultValue("").HasMaxLength(200).HasComment("密码");
+        builder.Property(au => au.RealName).HasColumnName("real_name").HasDefaultValue("").HasMaxLength(20).HasComment("真实姓名");
+        builder.Property(au => au.Email).HasColumnName("email").HasDefaultValue("").HasMaxLength(50).HasComment("邮箱");
+        builder.Property(au => au.Status).HasColumnName("status").HasDefaultValue(1).HasComment("状态");
+        builder.Property(au => au.CreatedAt).HasColumnName("created_at").HasComment("创建时间");
+        builder.Property(au => au.UpdatedAt).HasColumnName("updated_at").HasComment("更新时间");
+        builder.Property(au => au.IsDeleted).HasColumnName("is_deleted").HasDefaultValue(new Deleted(false)).HasComment("是否删除");
+        builder.Property(au => au.DeletedAt).HasColumnName("deleted_at").HasComment("删除时间");
+
         // 配置 AdminUser 与 AdminUserRole 的一对多关系
         builder.HasMany(au => au.Roles)
             .WithOne()
