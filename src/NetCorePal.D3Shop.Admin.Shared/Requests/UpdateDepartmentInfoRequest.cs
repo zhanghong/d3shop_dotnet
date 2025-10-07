@@ -12,7 +12,7 @@ public class UpdateDepartmentInfoRequest
 
     public string Code { get; set; } = string.Empty;
 
-    public DeptId ParentId { get; set; } = new DeptId(Guid.Empty);
+    public DepartmentId ParentId { get; set; } = new DepartmentId(Guid.Empty);
 
     public int Status { get; set; }
 }

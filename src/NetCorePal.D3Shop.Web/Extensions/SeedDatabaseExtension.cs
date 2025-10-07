@@ -380,13 +380,13 @@ namespace NetCorePal.D3Shop.Web.Extensions
                 dbContext.Menus.AddRange(menuManageButtons);
 
                 // 创建部门管理菜单
-                var deptMenu = new Menu(
+                var departmentMenu = new Menu(
                     "部门管理",
-                    "/system/dept",
+                    "/system/department",
                     MenuType.Menu,
                     systemMenu.Id,
                     "DEPT_MANAGE",
-                    "system/dept/index",
+                    "system/department/index",
                     "",
                     4,
                     "ion:git-network-outline",
@@ -399,17 +399,17 @@ namespace NetCorePal.D3Shop.Web.Extensions
                         KeepAlive = true
                     }
                 );
-                dbContext.Menus.Add(deptMenu);
+                dbContext.Menus.Add(departmentMenu);
                 dbContext.SaveChanges();
 
                 // 创建部门管理操作按钮
-                var deptButtons = new List<Menu>
+                var departmentButtons = new List<Menu>
                 {
                     new Menu(
                         "新增部门",
-                        "/system/dept/add",
+                        "/system/department/add",
                         MenuType.Button,
-                        deptMenu.Id,
+                        departmentMenu.Id,
                         "DEPT_ADD",
                         "",
                         "",
@@ -425,9 +425,9 @@ namespace NetCorePal.D3Shop.Web.Extensions
                     ),
                     new Menu(
                         "编辑部门",
-                        "/system/dept/edit",
+                        "/system/department/edit",
                         MenuType.Button,
-                        deptMenu.Id,
+                        departmentMenu.Id,
                         "DEPT_EDIT",
                         "",
                         "",
@@ -443,9 +443,9 @@ namespace NetCorePal.D3Shop.Web.Extensions
                     ),
                     new Menu(
                         "删除部门",
-                        "/system/dept/delete",
+                        "/system/department/delete",
                         MenuType.Button,
-                        deptMenu.Id,
+                        departmentMenu.Id,
                         "DEPT_DELETE",
                         "",
                         "",
@@ -460,7 +460,7 @@ namespace NetCorePal.D3Shop.Web.Extensions
                         }
                     )
                 };
-                dbContext.Menus.AddRange(deptButtons);
+                dbContext.Menus.AddRange(departmentButtons);
                 dbContext.SaveChanges();
             }
 

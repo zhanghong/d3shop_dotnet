@@ -10,9 +10,9 @@ namespace NetCorePal.D3Shop.Web.Application.Commands.Identity.Admin;
 public record CreateDepartmentCommand(
     string Name,
     string Description,
-    DeptId ParentId,
+    DepartmentId ParentId,
     int Status)
-    : ICommand<DeptId>;
+    : ICommand<DepartmentId>;
 
 public class CreateDepartmentCommandValidator : AbstractValidator<CreateDepartmentCommand>
 {
@@ -26,9 +26,9 @@ public class CreateDepartmentCommandValidator : AbstractValidator<CreateDepartme
 }
 
 public class CreateDepartmentCommandHandler(IDepartmentRepository departmentRepository)
-    : ICommandHandler<CreateDepartmentCommand, DeptId>
+    : ICommandHandler<CreateDepartmentCommand, DepartmentId>
 {
-    public async Task<DeptId> Handle(CreateDepartmentCommand request, CancellationToken cancellationToken)
+    public async Task<DepartmentId> Handle(CreateDepartmentCommand request, CancellationToken cancellationToken)
     {
 
         var department = new Department(request.Name, request.Description, request.ParentId, request.Status);

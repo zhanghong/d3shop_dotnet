@@ -46,9 +46,9 @@ public partial class BasicLayout : LayoutComponentBase
             },
             new PermissionMenuDataItem
             {
-                Path = "/admin/dept",
+                Path = "/admin/department",
                 Name = "部门管理",
-                Key = "depts",
+                Key = "departments",
                 Icon = "crown",
                 BoundPermissionCode = PermissionCodes.DepartmentManagement
             }

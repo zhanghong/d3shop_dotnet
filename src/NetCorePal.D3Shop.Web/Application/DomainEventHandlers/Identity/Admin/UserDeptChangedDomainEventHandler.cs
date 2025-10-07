@@ -10,14 +10,14 @@ using NetCorePal.D3Shop.Web.Const;
 using NetCorePal.Extensions.Domain;
 
 namespace NetCorePal.D3Shop.Web.Application.DomainEventHandlers.Identity.Admin;
-public class UserDeptChangedDomainEventHandler(
+public class UserDepartmentChangedDomainEventHandler(
     IMediator mediator,
-    UserDeptQuery userDeptQuery) : IDomainEventHandler<UserDeptChangedDomainEvent>
+    UserDepartmentQuery userDepartmentQuery) : IDomainEventHandler<UserDepartmentChangedDomainEvent>
 {
-    public async Task Handle(UserDeptChangedDomainEvent notification, CancellationToken cancellationToken)
+    public async Task Handle(UserDepartmentChangedDomainEvent notification, CancellationToken cancellationToken)
     {
-        var deptId = notification.UserDept.DeptId;
-        var userCount = await userDeptQuery.GetUserCount(deptId, cancellationToken);
-        await mediator.Send(new UpdateDeptUserCountCommand(deptId, userCount), cancellationToken);
+        var departmentId = notification.UserDepartment.DepartmentId;
+        var userCount = await userDepartmentQuery.GetUserCount(departmentId, cancellationToken);
+        await mediator.Send(new UpdateDepartmentUserCountCommand(departmentId, userCount), cancellationToken);
     }
 }

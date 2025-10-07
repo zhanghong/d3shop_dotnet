@@ -8,19 +8,19 @@ namespace NetCorePal.D3Shop.Web.Application.Commands.Identity.Admin;
 /// <summary>
 /// 添加用户到部门命令
 /// </summary>
-public record AddUserDeptCommand(AdminUserId AdminUserId, DeptId DeptId, string DeptName) : ICommand;
+public record AddUserDepartmentCommand(AdminUserId AdminUserId, DepartmentId DepartmentId, string DepartmentName) : ICommand;
 
 /// <summary>
 /// 添加用户到部门命令处理程序
 /// </summary>
-public class AddUserDeptCommandHandler(AdminUserRepository adminUserRepository)
-    : ICommandHandler<AddUserDeptCommand>
+public class AddUserDepartmentCommandHandler(AdminUserRepository adminUserRepository)
+    : ICommandHandler<AddUserDepartmentCommand>
 {
-    public async Task Handle(AddUserDeptCommand request, CancellationToken cancellationToken)
+    public async Task Handle(AddUserDepartmentCommand request, CancellationToken cancellationToken)
     {
         var user = await adminUserRepository.GetAsync(request.AdminUserId, cancellationToken) ??
                    throw new KnownException($"未找到用户，AdminUserId = {request.AdminUserId}");
 
-        user.AddUserDept(request.DeptId, request.DeptName);
+        user.AddUserDepartment(request.DepartmentId, request.DepartmentName);
     }
 }

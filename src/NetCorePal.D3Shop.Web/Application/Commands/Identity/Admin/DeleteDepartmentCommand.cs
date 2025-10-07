@@ -4,15 +4,15 @@ using NetCorePal.Extensions.Primitives;
 
 namespace NetCorePal.D3Shop.Web.Application.Commands.Identity.Admin;
 
-public record DeleteDepartmentCommand(DeptId DeptId) : ICommand;
+public record DeleteDepartmentCommand(DepartmentId DepartmentId) : ICommand;
 
 public class DeleteDepartmentCommandHandler(IDepartmentRepository departmentRepository)
     : ICommandHandler<DeleteDepartmentCommand>
 {
     public async Task Handle(DeleteDepartmentCommand request, CancellationToken cancellationToken)
     {
-        var depart = await departmentRepository.GetAsync(request.DeptId, cancellationToken) ??
-                     throw new KnownException($"部门不存在，DeptId={request.DeptId}");
+        var depart = await departmentRepository.GetAsync(request.DepartmentId, cancellationToken) ??
+                     throw new KnownException($"部门不存在，DepartmentId={request.DepartmentId}");
 
 
         depart.Delete();

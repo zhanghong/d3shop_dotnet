@@ -46,26 +46,26 @@ public class DepartmentQuery(ApplicationDbContext applicationDbContext) : IQuery
             .ToListAsync(cancellationToken);
 
         // 构建部门树
-        var departmentMap = departments.ToDictionary(dept => dept.Id);
-        var topLevelDepts = new List<DepartmentResponse>();
+        var departmentMap = departments.ToDictionary(department => department.Id);
+        var topLevelDepartments = new List<DepartmentResponse>();
 
-        var rootParentId = new DeptId(Guid.Empty);
-        foreach (var dept in departments)
+        var rootParentId = new DepartmentId(Guid.Empty);
+        foreach (var department in departments)
         {
-            if (dept.ParentId == rootParentId)
+            if (department.ParentId == rootParentId)
             {
-                topLevelDepts.Add(dept);
+                topLevelDepartments.Add(department);
             }
-            else if (departmentMap.TryGetValue(dept.ParentId, out var parent))
+            else if (departmentMap.TryGetValue(department.ParentId, out var parent))
             {
-                parent.Children.Add(dept);
+                parent.Children.Add(department);
             }
         }
-        return topLevelDepts;
+        return topLevelDepartments;
     }
 
 
-    public async Task<DepartmentResponse?> GetDeptByIdAsync(DeptId id, CancellationToken cancellationToken)
+    public async Task<DepartmentResponse?> GetDepartmentByIdAsync(DepartmentId id, CancellationToken cancellationToken)
     {
         return await DepartmentSet.AsNoTracking()
               .Select(d => new DepartmentResponse(

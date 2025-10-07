@@ -12,9 +12,9 @@ public class DepartmentInfoChangedDomainEventHandler(IMediator mediator, AdminUs
     public async Task Handle(DepartmentInfoChangedDomainEvent notification, CancellationToken cancellationToken)
     {
         var department = notification.Department;
-        var adminUserIds = await adminUserQuery.GetUserIdsByDeptIdAsync(department.Id, cancellationToken);
+        var adminUserIds = await adminUserQuery.GetUserIdsByDepartmentIdAsync(department.Id, cancellationToken);
         foreach (var adminUserId in adminUserIds)
-            await mediator.Send(new UpdateUserDeptInfoCommand(adminUserId, department.Id, department.Name),
+            await mediator.Send(new UpdateUserDepartmentInfoCommand(adminUserId, department.Id, department.Name),
                 cancellationToken);
     }
 }

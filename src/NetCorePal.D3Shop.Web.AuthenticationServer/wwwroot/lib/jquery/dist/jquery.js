@@ -3744,8 +3744,8 @@ jQuery.extend( {
 					} ).promise();
 				},
 				then: function( onFulfilled, onRejected, onProgress ) {
-					var maxDepth = 0;
-					function resolve( depth, deferred, handler, special ) {
+					var maxDepartmenth = 0;
+					function resolve( departmenth, deferred, handler, special ) {
 						return function() {
 							var that = this,
 								args = arguments,
@@ -3755,7 +3755,7 @@ jQuery.extend( {
 									// Support: Promises/A+ section 2.3.3.3.3
 									// https://promisesaplus.com/#point-59
 									// Ignore double-resolution attempts
-									if ( depth < maxDepth ) {
+									if ( departmenth < maxDepartmenth ) {
 										return;
 									}
 
@@ -3787,21 +3787,21 @@ jQuery.extend( {
 										if ( special ) {
 											then.call(
 												returned,
-												resolve( maxDepth, deferred, Identity, special ),
-												resolve( maxDepth, deferred, Thrower, special )
+												resolve( maxDepartmenth, deferred, Identity, special ),
+												resolve( maxDepartmenth, deferred, Thrower, special )
 											);
 
 										// Normal processors (resolve) also hook into progress
 										} else {
 
 											// ...and disregard older resolution values
-											maxDepth++;
+											maxDepartmenth++;
 
 											then.call(
 												returned,
-												resolve( maxDepth, deferred, Identity, special ),
-												resolve( maxDepth, deferred, Thrower, special ),
-												resolve( maxDepth, deferred, Identity,
+												resolve( maxDepartmenth, deferred, Identity, special ),
+												resolve( maxDepartmenth, deferred, Thrower, special ),
+												resolve( maxDepartmenth, deferred, Identity,
 													deferred.notifyWith )
 											);
 										}
@@ -3838,7 +3838,7 @@ jQuery.extend( {
 											// Support: Promises/A+ section 2.3.3.3.4.1
 											// https://promisesaplus.com/#point-61
 											// Ignore post-resolution exceptions
-											if ( depth + 1 >= maxDepth ) {
+											if ( departmenth + 1 >= maxDepartmenth ) {
 
 												// Only substitute handlers pass on context
 												// and multiple values (non-spec behavior)
@@ -3856,7 +3856,7 @@ jQuery.extend( {
 							// https://promisesaplus.com/#point-57
 							// Re-resolve promises immediately to dodge false rejection from
 							// subsequent errors
-							if ( depth ) {
+							if ( departmenth ) {
 								process();
 							} else {
 

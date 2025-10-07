@@ -1,4 +1,5 @@
 using NetCorePal.D3Shop.Domain.AggregatesModel.Identity.RoleAggregate;
+using NetCorePal.Extensions.Domain;
 
 namespace NetCorePal.D3Shop.Domain.AggregatesModel.Identity.AdminUserAggregate
 {
@@ -9,6 +10,8 @@ namespace NetCorePal.D3Shop.Domain.AggregatesModel.Identity.AdminUserAggregate
         public AdminUserId AdminUserId { get; private set; } = default!;
         public RoleId RoleId { get; private set; } = default!;
         public string RoleName { get; private set; } = string.Empty;
+        public DateTimeOffset CreatedAt { get; init; }
+        public UpdateTime UpdatedAt { get; private set; } = new UpdateTime(DateTimeOffset.UtcNow);
 
         public AdminUserRole(RoleId roleId, string roleName)
         {

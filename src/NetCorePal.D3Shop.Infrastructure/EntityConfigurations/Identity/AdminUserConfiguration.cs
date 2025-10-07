@@ -41,12 +41,12 @@ internal class AdminUserConfiguration : IEntityTypeConfiguration<AdminUser>
             .OnDelete(DeleteBehavior.ClientCascade);
         builder.Navigation(au => au.Permissions).AutoInclude();
 
-        //配置 AdminUser 与 UserDept 的一对多关系
-        builder.HasMany(au => au.UserDepts)
+        //配置 AdminUser 与 UserDepartment 的一对多关系
+        builder.HasMany(au => au.UserDepartments)
             .WithOne()
             .HasForeignKey(aup => aup.AdminUserId)
             .OnDelete(DeleteBehavior.ClientCascade);
-        builder.Navigation(au => au.UserDepts).AutoInclude();
+        builder.Navigation(au => au.UserDepartments).AutoInclude();
 
         builder.HasQueryFilter(au => !au.IsDeleted);
     }
@@ -61,12 +61,12 @@ internal class AdminUserRoleConfiguration : IEntityTypeConfiguration<AdminUserRo
     }
 }
 
-internal class UserDeptConfiguration : IEntityTypeConfiguration<UserDept>
+internal class UserDepartmentConfiguration : IEntityTypeConfiguration<UserDepartment>
 {
-    public void Configure(EntityTypeBuilder<UserDept> builder)
+    public void Configure(EntityTypeBuilder<UserDepartment> builder)
     {
         builder.ToTable("user_departments");
-        builder.HasKey(aur => new { aur.AdminUserId, aur.DeptId });
+        builder.HasKey(aur => new { aur.AdminUserId, aur.DepartmentId });
     }
 }
 

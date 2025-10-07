@@ -1,4 +1,5 @@
 using NetCorePal.D3Shop.Domain.AggregatesModel.Identity.RoleAggregate;
+using NetCorePal.Extensions.Domain;
 
 namespace NetCorePal.D3Shop.Domain.AggregatesModel.Identity.AdminUserAggregate
 {
@@ -11,6 +12,8 @@ namespace NetCorePal.D3Shop.Domain.AggregatesModel.Identity.AdminUserAggregate
         public AdminUserId AdminUserId { get; private set; } = default!;
         public string PermissionCode { get; private set; } = string.Empty;
         public List<RoleId> SourceRoleIds { get; } = [];
+        public DateTimeOffset CreatedAt { get; init; }
+        public UpdateTime UpdatedAt { get; private set; } = new UpdateTime(DateTimeOffset.UtcNow);
 
         public AdminUserPermission(string permissionCode, RoleId? sourceRoleId = null)
         {

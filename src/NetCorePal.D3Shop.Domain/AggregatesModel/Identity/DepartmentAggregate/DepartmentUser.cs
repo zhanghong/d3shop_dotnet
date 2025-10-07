@@ -16,7 +16,7 @@ namespace NetCorePal.D3Shop.Domain.AggregatesModel.Identity.DepartmentAggregate
         /// <summary>
         /// 部门id
         /// </summary>
-        public DeptId DeptId { get; set; } = default!;
+        public DepartmentId DepartmentId { get; set; } = default!;
 
         /// <summary>
         /// 用户名称

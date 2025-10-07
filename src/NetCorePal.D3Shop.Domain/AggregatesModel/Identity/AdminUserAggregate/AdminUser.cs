@@ -29,7 +29,7 @@ namespace NetCorePal.D3Shop.Domain.AggregatesModel.Identity.AdminUserAggregate
         public DeletedTime? DeletedAt { get; private set; }
 
         public virtual ICollection<AdminUserRole> Roles { get; } = [];
-        public virtual ICollection<UserDept> UserDepts { get; } = [];
+        public virtual ICollection<UserDepartment> UserDepartments { get; } = [];
         public virtual ICollection<AdminUserPermission> Permissions { get; } = [];
 
         protected AdminUser()
@@ -63,47 +63,47 @@ namespace NetCorePal.D3Shop.Domain.AggregatesModel.Identity.AdminUserAggregate
             savedRole?.UpdateRoleInfo(roleName);
         }
 
-        public void SetUserDepts(DeptId deptId, string deptName)
+        public void SetUserDepartments(DepartmentId departmentId, string departmentName)
         {
-            var savedDept = UserDepts.FirstOrDefault(r => r.DeptId == deptId);
-            savedDept?.UpdateDeptInfo(deptName);
+            var savedDepartment = UserDepartments.FirstOrDefault(r => r.DepartmentId == departmentId);
+            savedDepartment?.UpdateDepartmentInfo(departmentName);
         }
 
         /// <summary>
         /// 添加用户到部门
         /// </summary>
-        /// <param name="deptId">部门ID</param>
-        /// <param name="deptName">部门名称</param>
-        public void AddUserDept(DeptId deptId, string deptName)
+        /// <param name="departmentId">部门ID</param>
+        /// <param name="departmentName">部门名称</param>
+        public void AddUserDepartment(DepartmentId departmentId, string departmentName)
         {
             // 检查用户是否已在该部门
-            if (UserDepts.Any(d => d.DeptId == deptId))
+            if (UserDepartments.Any(d => d.DepartmentId == departmentId))
             {
                 return;
             }
 
-            var userDept = new UserDept(deptId, deptName);
-            UserDepts.Add(userDept);
+            var userDepartment = new UserDepartment(departmentId, departmentName);
+            UserDepartments.Add(userDepartment);
 
             // 添加领域事件，通知部门用户数量增加
-            AddDomainEvent(new UserDeptChangedDomainEvent(userDept));
+            AddDomainEvent(new UserDepartmentChangedDomainEvent(userDepartment));
         }
 
         /// <summary>
         /// 从部门中移除用户
         /// </summary>
-        /// <param name="deptId">部门ID</param>
-        public void RemoveUserDept(DeptId deptId)
+        /// <param name="departmentId">部门ID</param>
+        public void RemoveUserDepartment(DepartmentId departmentId)
         {
-            var userDept = UserDepts.FirstOrDefault(d => d.DeptId == deptId);
-            if (userDept == null)
+            var userDepartment = UserDepartments.FirstOrDefault(d => d.DepartmentId == departmentId);
+            if (userDepartment == null)
             {
                 return;
             }
 
-            UserDepts.Remove(userDept);
+            UserDepartments.Remove(userDepartment);
             // 添加领域事件，通知部门用户数量减少
-            AddDomainEvent(new UserDeptChangedDomainEvent(userDept));
+            AddDomainEvent(new UserDepartmentChangedDomainEvent(userDepartment));
         }
 
         public void UpdateRoles(IEnumerable<AdminUserRole> rolesToBeAssigned,

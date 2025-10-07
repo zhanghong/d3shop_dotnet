@@ -12,12 +12,12 @@ namespace NetCorePal.D3Shop.Web.Application.Commands.Identity.Admin;
 /// </summary>
 /// <param name="DepartmentId"></param>
 /// <param name="UserCount"></param>
-public record UpdateDeptUserCountCommand(DeptId DepartmentId, int UserCount) : ICommand;
+public record UpdateDepartmentUserCountCommand(DepartmentId DepartmentId, int UserCount) : ICommand;
 
 
-public class UpdateDeptUserCommandHandler(DepartmentRepository departmentRepository) : ICommandHandler<UpdateDeptUserCountCommand>
+public class UpdateDepartmentUserCommandHandler(DepartmentRepository departmentRepository) : ICommandHandler<UpdateDepartmentUserCountCommand>
 {
-    public async Task Handle(UpdateDeptUserCountCommand request, CancellationToken cancellationToken)
+    public async Task Handle(UpdateDepartmentUserCountCommand request, CancellationToken cancellationToken)
     {
         var department = await departmentRepository.GetAsync(request.DepartmentId, cancellationToken) ??
                          throw new KnownException($"未找到部门，DepartId = {request.DepartmentId}");

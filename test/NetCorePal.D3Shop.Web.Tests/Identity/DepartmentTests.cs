@@ -31,14 +31,14 @@ namespace NetCorePal.D3Shop.Web.Tests.Identity
         #region CreateDepartment Tests
 
         [Fact]
-        public async Task CreateDepartment_ShouldReturnDeptId()
+        public async Task CreateDepartment_ShouldReturnDepartmentId()
         {
             // Arrange
             var request = new CreateDepartmentRequest
             {
                 Name = "TestDepartment",
                 Remark = "test decription",
-                Pid = new DeptId(0)
+                Pid = new DepartmentId(0)
 
 
             };
@@ -48,7 +48,7 @@ namespace NetCorePal.D3Shop.Web.Tests.Identity
 
             // Assert - 创建成功
             Assert.True(response.IsSuccessStatusCode);
-            var responseData = await response.Content.ReadFromNewtonsoftJsonAsync<ResponseData<DeptId>>();
+            var responseData = await response.Content.ReadFromNewtonsoftJsonAsync<ResponseData<DepartmentId>>();
             Assert.NotNull(responseData);
             Assert.NotEqual(0, responseData.Data.Id); // 验证返回的用户ID不是默认值
         }
@@ -60,14 +60,14 @@ namespace NetCorePal.D3Shop.Web.Tests.Identity
         [Fact]
         public async Task GetAllDepartments_ShouldReturnPagedData()
         {
-            const string testDeptName = "TestDepartment";
+            const string testDepartmentName = "TestDepartment";
             // Arrange
             var request = new DepartmentQueryRequest
             {
-                Name = testDeptName,
+                Name = testDepartmentName,
             };
 
-            var url = "/api/Department/GetAllDepartments?Name=" + testDeptName;// + queryString;
+            var url = "/api/Department/GetAllDepartments?Name=" + testDepartmentName;// + queryString;
 
             // Act
             var response = await _client.GetAsync(url);
@@ -86,7 +86,7 @@ namespace NetCorePal.D3Shop.Web.Tests.Identity
         public async Task UpdateDepartmentInfo_ShouldReturnSuccess()
         {
             // Arrange
-            var deptId = 1; // 假设部门 ID 为 1
+            var departmentId = 1; // 假设部门 ID 为 1
             var request = new UpdateDepartmentInfoRequest
             {
                 Name = "Updated Department",
@@ -94,7 +94,7 @@ namespace NetCorePal.D3Shop.Web.Tests.Identity
             };
 
             // Act
-            var response = await _client.PutAsNewtonsoftJsonAsync($"/api/Department/UpdateDepartmentInfo/{deptId}", request);
+            var response = await _client.PutAsNewtonsoftJsonAsync($"/api/Department/UpdateDepartmentInfo/{departmentId}", request);
 
             // Assert
             response.EnsureSuccessStatusCode();
@@ -110,10 +110,10 @@ namespace NetCorePal.D3Shop.Web.Tests.Identity
         public async Task DeleteDepartment_ShouldReturnSuccess()
         {
             // Arrange
-            var deptId = 1; // 假设部门 ID 为 1
+            var departmentId = 1; // 假设部门 ID 为 1
 
             // Act
-            var response = await _client.DeleteAsync($"/api/Department/DeleteDepartment/{deptId}");
+            var response = await _client.DeleteAsync($"/api/Department/DeleteDepartment/{departmentId}");
 
             // Assert
             response.EnsureSuccessStatusCode();

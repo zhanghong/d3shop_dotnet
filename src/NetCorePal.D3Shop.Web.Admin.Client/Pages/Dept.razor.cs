@@ -2,7 +2,7 @@ using AntDesign.TableModels;
 
 namespace NetCorePal.D3Shop.Web.Admin.Client.Pages;
 
-public sealed partial class Dept
+public sealed partial class Department
 {
     [Inject] private IDepartmentService DepartmentService { get; set; } = default!;
     [Inject] private MessageService Message { get; set; } = default!;

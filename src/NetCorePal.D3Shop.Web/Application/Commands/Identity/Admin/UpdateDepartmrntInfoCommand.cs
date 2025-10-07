@@ -8,11 +8,11 @@ using NetCorePal.Extensions.Primitives;
 namespace NetCorePal.D3Shop.Web.Application.Commands.Identity.Admin;
 
 public record UpdateDepartmrntInfoCommand(
-    DeptId DepartmentId,
+    DepartmentId DepartmentId,
     string Name,
     string Remark,
     string Code,
-    DeptId ParentId,
+    DepartmentId ParentId,
     int Status) : ICommand;
 
 public class UpdateDepartmentCommandValidator : AbstractValidator<UpdateDepartmrntInfoCommand>

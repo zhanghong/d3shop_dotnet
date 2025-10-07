@@ -27,7 +27,7 @@ public class DepartmentController(
 
     [HttpPost]
     [AdminPermission(PermissionCodes.DepartmentCreate)]
-    public async Task<ResponseData<DeptId>> CreateDepartment([FromBody] CreateDepartmentRequest request)
+    public async Task<ResponseData<DepartmentId>> CreateDepartment([FromBody] CreateDepartmentRequest request)
     {
         var departmentId = await mediator.Send(
             new CreateDepartmentCommand(
@@ -53,7 +53,7 @@ public class DepartmentController(
 
     [HttpPut("{id}")]
     [AdminPermission(PermissionCodes.DepartmentEdit)]
-    public async Task<ResponseData> UpdateDepartmentInfo([FromRoute] DeptId id,
+    public async Task<ResponseData> UpdateDepartmentInfo([FromRoute] DepartmentId id,
         [FromBody] UpdateDepartmentInfoRequest request)
     {
         await mediator.Send(new UpdateDepartmrntInfoCommand(
@@ -71,7 +71,7 @@ public class DepartmentController(
 
     [HttpDelete("{id}")]
     [AdminPermission(PermissionCodes.DepartmentDelete)]
-    public async Task<ResponseData> DeleteDepartment([FromRoute] DeptId id)
+    public async Task<ResponseData> DeleteDepartment([FromRoute] DepartmentId id)
     {
         await mediator.Send(new DeleteDepartmentCommand(id), CancellationToken);
         return new ResponseData();
@@ -82,12 +82,12 @@ public class DepartmentController(
     /// </summary>
     [HttpPost]
     [AdminPermission(PermissionCodes.DepartmentEdit)]
-    public async Task<ResponseData> AddUserToDepartment([FromBody] AddUserDeptRequest request)
+    public async Task<ResponseData> AddUserToDepartment([FromBody] AddUserDepartmentRequest request)
     {
-        await mediator.Send(new AddUserDeptCommand(
+        await mediator.Send(new AddUserDepartmentCommand(
                 request.AdminUserId,
-                request.DeptId,
-                request.DeptName
+                request.DepartmentId,
+                request.DepartmentName
             ),
             CancellationToken);
         return new ResponseData();
@@ -98,11 +98,11 @@ public class DepartmentController(
     /// </summary>
     [HttpPost]
     [AdminPermission(PermissionCodes.DepartmentEdit)]
-    public async Task<ResponseData> RemoveUserFromDepartment([FromBody] RemoveUserDeptRequest request)
+    public async Task<ResponseData> RemoveUserFromDepartment([FromBody] RemoveUserDepartmentRequest request)
     {
-        await mediator.Send(new RemoveUserDeptCommand(
+        await mediator.Send(new RemoveUserDepartmentCommand(
                 request.AdminUserId,
-                request.DeptId
+                request.DepartmentId
             ),
             CancellationToken);
         return new ResponseData();

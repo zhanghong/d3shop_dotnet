@@ -7,16 +7,16 @@ namespace NetCorePal.D3Shop.Web.Admin.Client.Services;
 public interface IDepartmentService
 {
     [Post("/api/Department/CreateDepartment")]
-    Task<ResponseData<DeptId>> CreateDepartment([Body] CreateDepartmentRequest request);
+    Task<ResponseData<DepartmentId>> CreateDepartment([Body] CreateDepartmentRequest request);
 
     [Get("/api/Department/GetAllDepartments")]
     Task<ResponseData<List<DepartmentResponse>>> GetAllDepartments([Query] DepartmentQueryRequest request);
 
     [Put("/api/Department/UpdateDepartmentInfo/{id}")]
-    Task<ResponseData> UpdateDepartmentInfo(DeptId id, [Body] UpdateDepartmentInfoRequest request);
+    Task<ResponseData> UpdateDepartmentInfo(DepartmentId id, [Body] UpdateDepartmentInfoRequest request);
 
     [Delete("/api/Department/DeleteDepartment/{id}")]
-    Task<ResponseData> DeleteDepartment(DeptId id);
+    Task<ResponseData> DeleteDepartment(DepartmentId id);
 
 
 }

@@ -6,12 +6,12 @@ using System.Runtime.CompilerServices;
 
 namespace NetCorePal.D3Shop.Domain.AggregatesModel.Identity.DepartmentAggregate
 {
-    public partial record DeptId : IGuidStronglyTypedId;
+    public partial record DepartmentId : IGuidStronglyTypedId;
 
     /// <summary>
     /// 部门
     /// </summary>
-    public class Department : Entity<DeptId>, IAggregateRoot
+    public class Department : Entity<DepartmentId>, IAggregateRoot
     {
 
         /// <summary>
@@ -42,7 +42,7 @@ namespace NetCorePal.D3Shop.Domain.AggregatesModel.Identity.DepartmentAggregate
         /// <summary>
         /// 父部门id
         /// </summary>
-        public DeptId ParentId { get; private set; } = new DeptId(Guid.Empty);
+        public DepartmentId ParentId { get; private set; } = new DepartmentId(Guid.Empty);
 
         public DateTimeOffset CreatedAt { get; init; }
 
@@ -54,7 +54,7 @@ namespace NetCorePal.D3Shop.Domain.AggregatesModel.Identity.DepartmentAggregate
         {
         }
 
-        public Department(string name, string description, DeptId parentId, int status)
+        public Department(string name, string description, DepartmentId parentId, int status)
         {
             Name = name;
             Description = description;
@@ -71,17 +71,17 @@ namespace NetCorePal.D3Shop.Domain.AggregatesModel.Identity.DepartmentAggregate
         /// <param name="description">部门描述</param>
         /// <param name="parentId">父部门ID</param>
         /// <param name="isActive">是否启用</param>
-        /// <param name="deptUsers">部门用户</param>
+        /// <param name="departmentUsers">部门用户</param>
         /// <returns>部门实体</returns>
         //public static Department Create(
         //    string name,
         //    string code,
         //    string description,
-        //    DeptId parentId,
+        //    DepartmentId parentId,
         //    bool isActive,
-        //    IEnumerable<DepartmentUser> deptUsers)
+        //    IEnumerable<DepartmentUser> departmentUsers)
         //{
-        //    var department = new Department(name, description, parentId, deptUsers)
+        //    var department = new Department(name, description, parentId, departmentUsers)
         //    {
         //        Code = code,
         //        IsActive = isActive

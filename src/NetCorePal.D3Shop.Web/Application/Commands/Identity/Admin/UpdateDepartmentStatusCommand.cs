@@ -6,7 +6,7 @@ using NetCorePal.Extensions.Primitives;
 namespace NetCorePal.D3Shop.Web.Application.Commands.Identity.Admin
 {
     public record UpdateDepartmentStatusCommand(
-        DeptId DepartmentId,
+        DepartmentId DepartmentId,
         int Status) : ICommand;
 
     public class UpdateDepartmentStatusCommandValidator : AbstractValidator<UpdateDepartmentStatusCommand>

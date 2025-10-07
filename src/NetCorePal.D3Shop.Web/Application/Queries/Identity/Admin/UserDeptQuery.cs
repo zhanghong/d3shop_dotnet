@@ -10,22 +10,22 @@ using NetCorePal.Extensions.Primitives;
 
 namespace NetCorePal.D3Shop.Web.Application.Queries.Identity.Admin;
 
-public class UserDeptQuery(ApplicationDbContext applicationDbContext) : IQuery
+public class UserDepartmentQuery(ApplicationDbContext applicationDbContext) : IQuery
 {
-    private DbSet<UserDept> UserDeptSet { get; } = applicationDbContext.UserDepts;
+    private DbSet<UserDepartment> UserDepartmentSet { get; } = applicationDbContext.UserDepartments;
 
 
     /// <summary>
     ///  获取部门下的用户数量
     /// </summary>
-    /// <param name="deptId"></param>
+    /// <param name="departmentId"></param>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
-    public async Task<int> GetUserCount(DeptId deptId, CancellationToken cancellationToken)
+    public async Task<int> GetUserCount(DepartmentId departmentId, CancellationToken cancellationToken)
     {
         // 查询并构建初始列表
-        var userCount = await UserDeptSet.AsNoTracking()
-            .Where(d => d.DeptId == deptId)
+        var userCount = await UserDepartmentSet.AsNoTracking()
+            .Where(d => d.DepartmentId == departmentId)
             .CountAsync();
         return userCount;
     }

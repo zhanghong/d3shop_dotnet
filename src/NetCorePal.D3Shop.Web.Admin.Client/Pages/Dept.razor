@@ -1,6 +1,6 @@
-@page "/admin/dept"
+@page "/admin/department"
 @using NetCorePal.D3Shop.Web.Admin.Client.Extensions
-@using NetCorePal.D3Shop.Web.Admin.Client.Components.Identity.Dept
+@using NetCorePal.D3Shop.Web.Admin.Client.Components.Identity.Department
 
 
 @attribute [ClientPermission(PermissionCodes.AdminUserManagement)]
@@ -34,7 +34,7 @@
                 <AuthorizeView>
                     @if (context.CheckPermission(PermissionCodes.DepartmentCreate))
                     {
-                        <AddDept OnItemAdded="HandleItemAdded"></AddDept>
+                        <AddDepartment OnItemAdded="HandleItemAdded"></AddDepartment>
                     }
                 </AuthorizeView>
             </GridCol>
@@ -48,11 +48,11 @@
                 @if (context.CheckPermission(PermissionCodes.DepartmentEdit))
                 {
                     <CascadingValue Value="@row">
-                        <EditDeptInfo OnRowUpdated="HandleItemUpdated"></EditDeptInfo>
+                        <EditDepartmentInfo OnRowUpdated="HandleItemUpdated"></EditDepartmentInfo>
                     </CascadingValue>
                 }
             </AuthorizeView>
-       
+
             <AuthorizeView>
                 @if (context.CheckPermission(PermissionCodes.DepartmentDelete))
                 {
@@ -61,4 +61,4 @@
             </AuthorizeView>
         </ActionColumn>
     </ColumnDefinitions>
-</Table> 
+</Table>

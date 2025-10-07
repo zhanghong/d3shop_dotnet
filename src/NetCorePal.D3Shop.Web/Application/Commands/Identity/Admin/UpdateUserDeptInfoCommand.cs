@@ -5,16 +5,16 @@ using NetCorePal.Extensions.Primitives;
 
 namespace NetCorePal.D3Shop.Web.Application.Commands.Identity.Admin;
 
-public record UpdateUserDeptInfoCommand(AdminUserId AdminUserId, DeptId DeptId, string DeptName) : ICommand;
+public record UpdateUserDepartmentInfoCommand(AdminUserId AdminUserId, DepartmentId DepartmentId, string DepartmentName) : ICommand;
 
-public class UpdateUserDeptInfoCommandHandler(AdminUserRepository adminUserRepository)
-    : ICommandHandler<UpdateUserDeptInfoCommand>
+public class UpdateUserDepartmentInfoCommandHandler(AdminUserRepository adminUserRepository)
+    : ICommandHandler<UpdateUserDepartmentInfoCommand>
 {
-    public async Task Handle(UpdateUserDeptInfoCommand request, CancellationToken cancellationToken)
+    public async Task Handle(UpdateUserDepartmentInfoCommand request, CancellationToken cancellationToken)
     {
         var user = await adminUserRepository.GetAsync(request.AdminUserId, cancellationToken) ??
                    throw new KnownException($"未找到用户，AdminUserId = {request.AdminUserId}");
 
-        user.SetUserDepts(request.DeptId, request.DeptName);
+        user.SetUserDepartments(request.DepartmentId, request.DepartmentName);
     }
 }

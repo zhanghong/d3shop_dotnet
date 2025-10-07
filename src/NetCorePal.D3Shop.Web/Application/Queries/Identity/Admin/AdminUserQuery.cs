@@ -91,10 +91,10 @@ public class AdminUserQuery(ApplicationDbContext applicationDbContext, IMemoryCa
             .AnyAsync(au => au.Name == userName, cancellationToken);
     }
 
-    public async Task<List<AdminUserId>> GetUserIdsByDeptIdAsync(DeptId deptId, CancellationToken cancellationToken)
+    public async Task<List<AdminUserId>> GetUserIdsByDepartmentIdAsync(DepartmentId departmentId, CancellationToken cancellationToken)
     {
         return await AdminUserSet.AsNoTracking()
-             .Where(x => x.UserDepts.Any(r => r.DeptId == deptId))
+             .Where(x => x.UserDepartments.Any(r => r.DepartmentId == departmentId))
             .Select(x => x.Id)
             .ToListAsync(cancellationToken);
     }

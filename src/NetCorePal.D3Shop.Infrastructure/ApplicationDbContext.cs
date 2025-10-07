@@ -37,7 +37,7 @@ public partial class ApplicationDbContext(DbContextOptions options, IMediator me
 
     public DbSet<AdminUser> AdminUsers => Set<AdminUser>();
 
-    public DbSet<UserDept> UserDepts => Set<UserDept>();
+    public DbSet<UserDepartment> UserDepartments => Set<UserDepartment>();
     public DbSet<Role> Roles => Set<Role>();
     public DbSet<Department> Departments => Set<Department>();
     public DbSet<Menu> Menus => Set<Menu>();

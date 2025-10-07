@@ -6,7 +6,7 @@
        ConfirmLoading="@_modalConfirmLoading">
 
     <Form @ref="_form"
-          Model="@_deptInfoModel"
+          Model="@_departmentInfoModel"
           OnFinish="Form_OnFinish"
           LabelColSpan="4"
           WrapperColSpan="16">
@@ -28,27 +28,27 @@
     private bool _modalVisible;
     private bool _modalConfirmLoading;
     private Form<UpdateDepartmentInfoRequest> _form = default!;
-    private UpdateDepartmentInfoRequest _deptInfoModel = new();
+    private UpdateDepartmentInfoRequest _departmentInfoModel = new();
 
     private void ShowModal()
     {
         _modalVisible = true;
-        _deptInfoModel.Name = Row.Name;
-        _deptInfoModel.Remark = Row.Remark;
+        _departmentInfoModel.Name = Row.Name;
+        _departmentInfoModel.Remark = Row.Remark;
     }
 
     private async Task Form_OnFinish(EditContext editContext)
     {
         _modalConfirmLoading = true;
         StateHasChanged();
-        var response = await DepartmentService.UpdateDepartmentInfo(Row.Id, _deptInfoModel);
+        var response = await DepartmentService.UpdateDepartmentInfo(Row.Id, _departmentInfoModel);
         _modalConfirmLoading = false;
         if (response.Success)
         {
             _modalVisible = false;
             _ = Message.Success("更新成功！");
-            Row.Name = _deptInfoModel.Name;
-            Row.Remark = _deptInfoModel.Remark;
+            Row.Name = _departmentInfoModel.Name;
+            Row.Remark = _departmentInfoModel.Remark;
             await OnRowUpdated.InvokeAsync();
         }
         else

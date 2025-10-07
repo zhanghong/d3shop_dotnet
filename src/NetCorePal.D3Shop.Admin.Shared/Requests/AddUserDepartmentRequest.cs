@@ -4,9 +4,9 @@ using NetCorePal.D3Shop.Domain.AggregatesModel.Identity.DepartmentAggregate;
 namespace NetCorePal.D3Shop.Admin.Shared.Requests;
 
 /// <summary>
-/// 从部门中移除用户请求
+/// 添加用户到部门请求
 /// </summary>
-public class RemoveUserDeptRequest
+public class AddUserDepartmentRequest
 {
     /// <summary>
     /// 用户ID
@@ -16,5 +16,10 @@ public class RemoveUserDeptRequest
     /// <summary>
     /// 部门ID
     /// </summary>
-    public DeptId DeptId { get; set; } = default!;
+    public DepartmentId DepartmentId { get; set; } = default!;
+
+    /// <summary>
+    /// 部门名称
+    /// </summary>
+    public string DepartmentName { get; set; } = string.Empty;
 }

@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Components.Forms;
 
-namespace NetCorePal.D3Shop.Web.Admin.Client.Components.Identity.Dept;
+namespace NetCorePal.D3Shop.Web.Admin.Client.Components.Identity.Department;
 
-public partial class AddDept
+public partial class AddDepartment
 {
     [Inject] private IDepartmentService DepartmentService { get; set; } = default!;
     [Inject] private MessageService Message { get; set; } = default!;
