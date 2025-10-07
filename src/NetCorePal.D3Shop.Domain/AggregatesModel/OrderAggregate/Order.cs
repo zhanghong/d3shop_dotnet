@@ -4,7 +4,7 @@ using NetCorePal.Extensions.Primitives;
 
 namespace NetCorePal.D3Shop.Domain.AggregatesModel.OrderAggregate
 {
-    public partial record OrderId : IInt64StronglyTypedId;
+    public partial record OrderId : IGuidStronglyTypedId;
 
     /// <summary>
     /// 聚合根

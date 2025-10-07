@@ -3,7 +3,7 @@ using NetCorePal.Extensions.Domain;
 
 namespace NetCorePal.D3Shop.Domain.AggregatesModel.DeliverAggregate
 {
-    public partial record DeliverRecordId : IInt64StronglyTypedId;
+    public partial record DeliverRecordId : IGuidStronglyTypedId;
 
     public class DeliverRecord : Entity<DeliverRecordId>, IAggregateRoot
     {

@@ -2,7 +2,7 @@ using NetCorePal.Extensions.Domain;
 
 namespace NetCorePal.D3Shop.Domain.AggregatesModel.Identity.ClientUserAggregate;
 
-public partial record ThirdPartyLoginId : IInt64StronglyTypedId;
+public partial record ThirdPartyLoginId : IGuidStronglyTypedId;
 
 public class UserThirdPartyLogin : Entity<ThirdPartyLoginId>
 {

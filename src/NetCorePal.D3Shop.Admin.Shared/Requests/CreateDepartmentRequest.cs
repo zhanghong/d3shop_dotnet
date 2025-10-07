@@ -10,7 +10,7 @@ public class CreateDepartmentRequest
     [Required(ErrorMessage = "部门名称不能为空")]
     public string Name { get; set; } = string.Empty;
 
-    public DeptId Pid { get; set; } = new DeptId(0);
+    public DeptId Pid { get; set; } = new DeptId(Guid.Empty);
 
     public int Status { get; set; } = 1;
 

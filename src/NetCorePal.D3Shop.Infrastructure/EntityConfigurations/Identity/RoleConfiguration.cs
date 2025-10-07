@@ -10,7 +10,7 @@ internal class RoleConfiguration : IEntityTypeConfiguration<Role>
     {
         builder.ToTable("roles");
         builder.HasKey(r => r.Id);
-        builder.Property(r => r.Id).UseSnowFlakeValueGenerator();
+        builder.Property(r => r.Id).ValueGeneratedOnAdd();
         builder.HasMany(r => r.Permissions).WithOne().HasForeignKey(rp => rp.RoleId);
         builder.Navigation(e => e.Permissions).AutoInclude();
     }
@@ -20,7 +20,7 @@ internal class RolePermissionConfiguration : IEntityTypeConfiguration<RolePermis
 {
     public void Configure(EntityTypeBuilder<RolePermission> builder)
     {
-        builder.ToTable("rolePermissions");
+        builder.ToTable("role_permissions");
         builder.HasKey(rp => new { rp.RoleId, rp.PermissionCode });
     }
 }

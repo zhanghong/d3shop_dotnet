@@ -208,7 +208,7 @@ namespace NetCorePal.D3Shop.Web.Controllers.Identity.Admin
         /// <param name="request">可见性设置请求</param>
         /// <returns>设置结果</returns>
         [HttpPut("{id}/visibility")]
-        public async Task<ResponseData> SetMenuVisibility(long id, [FromBody] SetVisibilityRequest request)
+        public async Task<ResponseData> SetMenuVisibility(Guid id, [FromBody] SetVisibilityRequest request)
         {
             try
             {
@@ -228,7 +228,7 @@ namespace NetCorePal.D3Shop.Web.Controllers.Identity.Admin
         /// <param name="request">启用状态设置请求</param>
         /// <returns>设置结果</returns>
         [HttpPut("{id}/enabled")]
-        public async Task<ResponseData> SetMenuEnabled(long id, [FromBody] SetEnabledRequest request)
+        public async Task<ResponseData> SetMenuEnabled(Guid id, [FromBody] SetEnabledRequest request)
         {
             try
             {

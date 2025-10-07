@@ -4,7 +4,7 @@ using NetCorePal.Extensions.Domain;
 
 namespace NetCorePal.D3Shop.Domain.AggregatesModel.Identity.RoleAggregate
 {
-    public partial record RoleId : IInt64StronglyTypedId;
+    public partial record RoleId : IGuidStronglyTypedId;
 
     public class Role : Entity<RoleId>, IAggregateRoot
     {

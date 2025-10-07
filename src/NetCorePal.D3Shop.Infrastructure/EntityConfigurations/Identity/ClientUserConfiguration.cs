@@ -8,9 +8,9 @@ internal class ClientUserConfiguration : IEntityTypeConfiguration<ClientUser>
 {
     public void Configure(EntityTypeBuilder<ClientUser> builder)
     {
-        builder.ToTable("clientUsers");
+        builder.ToTable("client_users");
         builder.HasKey(cu => cu.Id);
-        builder.Property(cu => cu.Id).UseSnowFlakeValueGenerator();
+        builder.Property(cu => cu.Id).ValueGeneratedOnAdd();
         // 配置 ClientUser 与 DeliveryAddress 的一对多关系
         builder.HasMany(cu => cu.DeliveryAddresses)
             .WithOne()
@@ -35,9 +35,9 @@ internal class UserDeliveryAddressConfiguration : IEntityTypeConfiguration<UserD
 {
     public void Configure(EntityTypeBuilder<UserDeliveryAddress> builder)
     {
-        builder.ToTable("userDeliveryAddresses");
+        builder.ToTable("user_delivery_addresses");
         builder.HasKey(uda => uda.Id);
-        builder.Property(uda => uda.Id).UseSnowFlakeValueGenerator();
+        builder.Property(uda => uda.Id).ValueGeneratedOnAdd();
     }
 }
 
@@ -45,9 +45,9 @@ internal class UserThirdPartyLoginConfiguration : IEntityTypeConfiguration<UserT
 {
     public void Configure(EntityTypeBuilder<UserThirdPartyLogin> builder)
     {
-        builder.ToTable("userThirdPartyLogins");
+        builder.ToTable("user_third_party_logins");
         builder.HasKey(tpl => tpl.Id);
-        builder.Property(tpl => tpl.Id).UseSnowFlakeValueGenerator();
+        builder.Property(tpl => tpl.Id).ValueGeneratedOnAdd();
         builder.Property(x => x.Provider)
             .HasConversion(
                 v => v.ToString(),
@@ -59,8 +59,8 @@ internal class ClientUserRefreshTokenConfiguration : IEntityTypeConfiguration<Cl
 {
     public void Configure(EntityTypeBuilder<ClientUserRefreshToken> builder)
     {
-        builder.ToTable("clientUserRefreshTokens");
+        builder.ToTable("client_user_refresh_tokens");
         builder.HasKey(x => x.Id);
-        builder.Property(x => x.Id).UseSnowFlakeValueGenerator();
+        builder.Property(x => x.Id).ValueGeneratedOnAdd();
     }
 }

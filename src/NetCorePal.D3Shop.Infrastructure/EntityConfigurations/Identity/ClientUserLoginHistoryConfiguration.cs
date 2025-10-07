@@ -8,8 +8,8 @@ internal class ClientUserLoginHistoryConfiguration : IEntityTypeConfiguration<Cl
 {
     public void Configure(EntityTypeBuilder<ClientUserLoginHistory> builder)
     {
-        builder.ToTable("clientUserLoginHistory");
+        builder.ToTable("client_user_login_history");
         builder.HasKey(a => a.Id);
-        builder.Property(a => a.Id).UseSnowFlakeValueGenerator();
+        builder.Property(a => a.Id).ValueGeneratedOnAdd();
     }
 }

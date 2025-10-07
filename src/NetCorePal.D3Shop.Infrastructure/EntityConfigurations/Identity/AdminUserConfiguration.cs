@@ -11,9 +11,9 @@ internal class AdminUserConfiguration : IEntityTypeConfiguration<AdminUser>
 {
     public void Configure(EntityTypeBuilder<AdminUser> builder)
     {
-        builder.ToTable("adminUsers");
+        builder.ToTable("login_users");
         builder.HasKey(au => au.Id);
-        builder.Property(au => au.Id).UseSnowFlakeValueGenerator();
+        builder.Property(au => au.Id).ValueGeneratedOnAdd();
         // 配置 AdminUser 与 AdminUserRole 的一对多关系
         builder.HasMany(au => au.Roles)
             .WithOne()
@@ -43,7 +43,7 @@ internal class AdminUserRoleConfiguration : IEntityTypeConfiguration<AdminUserRo
 {
     public void Configure(EntityTypeBuilder<AdminUserRole> builder)
     {
-        builder.ToTable("adminUserRoles");
+        builder.ToTable("admin_user_roles");
         builder.HasKey(aur => new { aur.AdminUserId, aur.RoleId });
     }
 }
@@ -52,7 +52,7 @@ internal class UserDeptConfiguration : IEntityTypeConfiguration<UserDept>
 {
     public void Configure(EntityTypeBuilder<UserDept> builder)
     {
-        builder.ToTable("userDepts");
+        builder.ToTable("user_departments");
         builder.HasKey(aur => new { aur.AdminUserId, aur.DeptId });
     }
 }
@@ -61,7 +61,7 @@ internal class AdminUserPermissionConfiguration : IEntityTypeConfiguration<Admin
 {
     public void Configure(EntityTypeBuilder<AdminUserPermission> builder)
     {
-        builder.ToTable("adminUserPermissions");
+        builder.ToTable("admin_user_permissions");
         builder.HasKey(aup => new { aup.AdminUserId, aup.PermissionCode });
         builder.Property(p => p.SourceRoleIds).HasConversion(
             v => JsonSerializer.Serialize(v, (JsonSerializerOptions?)null),

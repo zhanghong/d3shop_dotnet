@@ -23,7 +23,7 @@ namespace NetCorePal.D3Shop.Admin.Shared.Requests.MenuRequests
         /// <summary>
         /// 父菜单ID
         /// </summary>
-        public MenuId Pid { get; set; } = new MenuId(0);
+        public MenuId Pid { get; set; } = new MenuId(Guid.Empty);
         /// <summary>
         /// 菜单类型
         /// </summary>

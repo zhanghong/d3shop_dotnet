@@ -91,7 +91,7 @@ namespace NetCorePal.D3Shop.Web.Application.Queries.Identity.Admin
                    }
                })
                .ToListAsync(cancellationToken);
-            return menuTreeNode.ToTree(new MenuId(0));
+            return menuTreeNode.ToTree(new MenuId(Guid.Empty));
         }
 
         /// <summary>

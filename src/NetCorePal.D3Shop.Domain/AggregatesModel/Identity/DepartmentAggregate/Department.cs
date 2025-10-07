@@ -6,7 +6,7 @@ using System.Runtime.CompilerServices;
 
 namespace NetCorePal.D3Shop.Domain.AggregatesModel.Identity.DepartmentAggregate
 {
-    public partial record DeptId : IInt64StronglyTypedId;
+    public partial record DeptId : IGuidStronglyTypedId;
 
     /// <summary>
     /// 部门
@@ -42,7 +42,7 @@ namespace NetCorePal.D3Shop.Domain.AggregatesModel.Identity.DepartmentAggregate
         /// <summary>
         /// 父部门id
         /// </summary>
-        public DeptId ParentId { get; private set; } = new DeptId(0);
+        public DeptId ParentId { get; private set; } = new DeptId(Guid.Empty);
 
         public DateTimeOffset CreatedAt { get; init; }
 

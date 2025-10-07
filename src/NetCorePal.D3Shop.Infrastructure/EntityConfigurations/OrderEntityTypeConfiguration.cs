@@ -8,9 +8,9 @@ internal class OrderEntityTypeConfiguration : IEntityTypeConfiguration<Order>
 {
     public void Configure(EntityTypeBuilder<Order> builder)
     {
-        builder.ToTable("order");
+        builder.ToTable("orders");
         builder.HasKey(t => t.Id);
-        builder.Property(t => t.Id).UseSnowFlakeValueGenerator();
+        builder.Property(t => t.Id).ValueGeneratedOnAdd();
         builder.Property(b => b.Name).HasMaxLength(100);
         builder.Property(b => b.Count);
         builder.Property(b => b.Paid);

@@ -8,8 +8,8 @@ internal class DeliverRecordConfiguration : IEntityTypeConfiguration<DeliverReco
 {
     public void Configure(EntityTypeBuilder<DeliverRecord> builder)
     {
-        builder.ToTable("deliverrecord");
+        builder.ToTable("deliver_records");
         builder.HasKey(t => t.Id);
-        builder.Property(t => t.Id).UseSnowFlakeValueGenerator();
+        builder.Property(t => t.Id).ValueGeneratedOnAdd();
     }
 }

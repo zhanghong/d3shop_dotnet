@@ -35,7 +35,7 @@ namespace NetCorePal.D3Shop.Web.Controllers
         [Route("event")]
         public async Task<ResponseData<long>> Event([FromServices] IIntegrationEventPublisher publisher)
         {
-            await publisher.PublishAsync(new OrderPaidIntegrationEvent(new OrderId(55)));
+            await publisher.PublishAsync(new OrderPaidIntegrationEvent(new OrderId(Guid.NewGuid())));
             return 55L.AsResponseData();
         }
 
@@ -94,9 +94,9 @@ namespace NetCorePal.D3Shop.Web.Controllers
         }
     }
 
-    public partial record My2Id : IInt64StronglyTypedId;
+    public partial record My2Id : IGuidStronglyTypedId;
 
-    public partial record MyId : IInt64StronglyTypedId;
+    public partial record MyId : IGuidStronglyTypedId;
 
     public record JsonRequest(MyId Id, string Name, DateTimeOffset Time);
 

@@ -49,7 +49,7 @@ public class DepartmentQuery(ApplicationDbContext applicationDbContext) : IQuery
         var departmentMap = departments.ToDictionary(dept => dept.Id);
         var topLevelDepts = new List<DepartmentResponse>();
 
-        var rootParentId = new DeptId(0);
+        var rootParentId = new DeptId(Guid.Empty);
         foreach (var dept in departments)
         {
             if (dept.ParentId == rootParentId)

@@ -2,7 +2,7 @@ using NetCorePal.Extensions.Domain;
 
 namespace NetCorePal.D3Shop.Domain.AggregatesModel.Identity.ClientUserAggregate;
 
-public partial record DeliveryAddressId : IInt64StronglyTypedId;
+public partial record DeliveryAddressId : IGuidStronglyTypedId;
 
 public class UserDeliveryAddress : Entity<DeliveryAddressId>
 {

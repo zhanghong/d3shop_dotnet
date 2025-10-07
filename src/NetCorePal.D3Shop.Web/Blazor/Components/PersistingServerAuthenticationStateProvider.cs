@@ -57,7 +57,7 @@ namespace NetCorePal.D3Shop.Web.Blazor.Components
                 var name = principal.FindFirst(_options.ClaimsIdentity.UserNameClaimType)?.Value;
                 if (userIdString != null && name != null)
                 {
-                    if (!long.TryParse(userIdString, out var userId))
+                    if (!Guid.TryParse(userIdString, out var userId))
                         throw new InvalidOperationException("User Id could not be parsed to a valid long value.");
                     var permissions = await _adminUserQuery.GetAdminUserPermissionCodes(new AdminUserId(userId));
                     _state.PersistAsJson(nameof(UserInfo), new UserInfo

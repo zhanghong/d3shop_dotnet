@@ -3,7 +3,7 @@ using NetCorePal.Extensions.Primitives;
 
 namespace NetCorePal.D3Shop.Domain.AggregatesModel.Identity.ClientUserAggregate;
 
-public partial record ClientUserRefreshTokenId : IInt64StronglyTypedId;
+public partial record ClientUserRefreshTokenId : IGuidStronglyTypedId;
 
 public class ClientUserRefreshToken : Entity<ClientUserRefreshTokenId>
 {

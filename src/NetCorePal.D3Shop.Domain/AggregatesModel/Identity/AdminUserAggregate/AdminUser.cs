@@ -8,7 +8,7 @@ using NetCorePal.Extensions.Primitives;
 
 namespace NetCorePal.D3Shop.Domain.AggregatesModel.Identity.AdminUserAggregate
 {
-    public partial record AdminUserId : IInt64StronglyTypedId;
+    public partial record AdminUserId : IGuidStronglyTypedId;
 
     public class AdminUser : Entity<AdminUserId>, IAggregateRoot
     {

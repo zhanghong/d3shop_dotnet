@@ -12,7 +12,7 @@ internal class MenuConfiguration : IEntityTypeConfiguration<Menu>
     {
         builder.ToTable("menus");
         builder.HasKey(m => m.Id);
-        builder.Property(m => m.Id).UseSnowFlakeValueGenerator();
+        builder.Property(m => m.Id).ValueGeneratedOnAdd();
 
         //// 配置 Menu 与子菜单的一对多关系
         //builder.HasMany(m => m.Children)

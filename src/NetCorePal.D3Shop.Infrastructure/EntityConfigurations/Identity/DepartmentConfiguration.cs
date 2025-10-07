@@ -10,7 +10,7 @@ internal class DepartmentConfiguration : IEntityTypeConfiguration<Department>
     {
         builder.ToTable("departments");
         builder.HasKey(r => r.Id);
-        builder.Property(r => r.Id).UseSnowFlakeValueGenerator();
+        builder.Property(r => r.Id).ValueGeneratedOnAdd();
 
 
     }

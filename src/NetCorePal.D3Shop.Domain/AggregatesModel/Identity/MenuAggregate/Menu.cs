@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace NetCorePal.D3Shop.Domain.AggregatesModel.Identity.MenuAggregate
 {
 
-    public partial record MenuId : IInt64StronglyTypedId;
+    public partial record MenuId : IGuidStronglyTypedId;
 
     /// <summary>
     /// 系统菜单实体类，定义了菜单的基本结构和层级关系

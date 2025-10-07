@@ -5,7 +5,7 @@ using NetCorePal.Extensions.Primitives;
 
 namespace NetCorePal.D3Shop.Domain.AggregatesModel.Identity.ClientUserAggregate;
 
-public partial record ClientUserId : IInt64StronglyTypedId;
+public partial record ClientUserId : IGuidStronglyTypedId;
 
 public class ClientUser : Entity<ClientUserId>, IAggregateRoot
 {

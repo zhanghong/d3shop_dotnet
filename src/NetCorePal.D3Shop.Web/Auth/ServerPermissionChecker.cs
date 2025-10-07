@@ -17,7 +17,7 @@ public class ServerPermissionChecker(AdminUserQuery adminUserQuery)
         if (string.IsNullOrEmpty(userIdString))
             throw new InvalidOperationException("User Id is missing in ClaimsPrincipal.");
 
-        if (!long.TryParse(userIdString, out var userId))
+        if (!Guid.TryParse(userIdString, out var userId))
             throw new InvalidOperationException("User Id could not be parsed to a valid long value.");
 
         var adminUserPermissions = await adminUserQuery.GetAdminUserPermissionCodes(new AdminUserId(userId));

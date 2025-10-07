@@ -21,7 +21,7 @@ public class CurrentClientUser(IHttpContextAccessor httpContextAccessor) : ICurr
         {
             var userId = httpContextAccessor.HttpContext?.User.FindFirstValue(ClaimTypes.NameIdentifier)
                          ?? throw new InvalidOperationException("User is not authenticated.");
-            return new ClientUserId(long.Parse(userId));
+            return new ClientUserId(Guid.Parse(userId));
         }
     }
 
@@ -47,7 +47,7 @@ public class CurrentAdminUser(IHttpContextAccessor httpContextAccessor) : ICurre
         {
             var userId = httpContextAccessor.HttpContext?.User.FindFirstValue(ClaimTypes.NameIdentifier)
                          ?? throw new InvalidOperationException("User is not authenticated.");
-            return new AdminUserId(long.Parse(userId));
+            return new AdminUserId(Guid.Parse(userId));
         }
     }
 

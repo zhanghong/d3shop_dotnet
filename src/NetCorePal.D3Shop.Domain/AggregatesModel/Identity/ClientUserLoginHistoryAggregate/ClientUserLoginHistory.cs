@@ -3,7 +3,7 @@ using NetCorePal.Extensions.Domain;
 
 namespace NetCorePal.D3Shop.Domain.AggregatesModel.Identity.ClientUserLoginHistoryAggregate;
 
-public partial record ClientUserLoginHistoryId : IInt64StronglyTypedId;
+public partial record ClientUserLoginHistoryId : IGuidStronglyTypedId;
 
 public class ClientUserLoginHistory : Entity<ClientUserLoginHistoryId>, IAggregateRoot
 {
