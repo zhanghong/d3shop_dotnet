@@ -1,4 +1,5 @@
 using NetCorePal.D3Shop.Domain.AggregatesModel.Identity.MenuAggregate;
+using NetCorePal.Extensions.Domain;
 
 namespace NetCorePal.D3Shop.Domain.AggregatesModel.Identity.RoleAggregate
 {
